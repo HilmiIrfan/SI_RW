@@ -20,4 +20,6 @@ Route::get('/login', function () {
     return view('login.login');
 })->name('login');
 
-
+Route::get('/agenda', function(){
+    return view('agenda.agenda');
+});
