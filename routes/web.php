@@ -28,3 +28,4 @@ Route::get('/agenda', function () {
 Route::get('/laporan', function () {
     return view('laporan.laporan');
 });
+

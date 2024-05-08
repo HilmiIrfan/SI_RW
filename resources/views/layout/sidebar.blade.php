@@ -29,7 +29,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="../widgets.html" class="nav-link">
+          <a href="laporan" class="nav-link">
             <i class="nav-icon far fa-envelope"></i>
             <p>
               Laporan
