@@ -89,18 +89,6 @@
 
 </style>
 
-<div class="card">
-    <div class="card-header">
-        <div class="container">
-            <div class="image-container">
-                <img src="adminlte/dist/img/jalanKesatrian.png" alt="Street sign">
-                <div class="text-container">
-                    <p><span>9</span> Rukun Tetangga &nbsp; &nbsp; &nbsp; <span>60</span> Kartu Keluarga  &nbsp; &nbsp; &nbsp; <span>750</span> Warga</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
 <div class="card">
   <div class="card-body">
@@ -111,19 +99,36 @@
               <img src="adminlte/dist/img/image 8.png" alt="Street sign">
           </div>
           <div class="text-container">
+            <h1>BERITA RW 01 KELURAHAN KESATRIAN</h1>
+            <table class="table table-bordered table-stiped table-hover table-sm" id="table_agenda">
+              <thead>
+                <tr><th>Berita 1</th><th>Tanggal</th><th>Deskripsi</th></tr>
+              </thead>
+              <thead>
+                <tr><th>Berita 2</th><th>Tanggal</th><th>Deskripsi</th></tr>
+              </thead>
+              <thead>
+                <tr><th>Berita 3</th><th>Tanggal</th><th>Deskripsi</th></tr>
+              </thead>
+              <thead>
+                <tr><th>Berita 4</th><th>Tanggal</th><th>Deskripsi</th></tr>
+              </thead>
+            </table>
+          </div>
+          <div class="text-container">
             <h1>AGENDA KEGIATAN RW 01 KELURAHAN KESATRIAN</h1>
             <table class="table table-bordered table-stiped table-hover table-sm" id="table_agenda">
               <thead>
-                <tr><th>Agenda Kegiatan 1</th><th>Tanggal</th><th>Deskripsi Agenda</th></tr>
+                <tr><th>Agenda Kegiatan 1</th><th>Tanggal</th></tr>
               </thead>
               <thead>
-                <tr><th>Agenda Kegiatan 2</th><th>Tanggal</th><th>Deskripsi Agenda</th></tr>
+                <tr><th>Agenda Kegiatan 2</th><th>Tanggal</th></tr>
               </thead>
               <thead>
-                <tr><th>Agenda Kegiatan 3</th><th>Tanggal</th><th>Deskripsi Agenda</th></tr>
+                <tr><th>Agenda Kegiatan 3</th><th>Tanggal</th></tr>
               </thead>
               <thead>
-                <tr><th>Agenda Kegiatan 4</th><th>Tanggal</th><th>Deskripsi Agenda</th></tr>
+                <tr><th>Agenda Kegiatan 4</th><th>Tanggal</th></tr>
               </thead>
             </table>
           </div>
