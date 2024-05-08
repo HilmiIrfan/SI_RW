@@ -65,7 +65,7 @@
         </a>
         </div>
       </div>
-      <!-- /.social-auth-links -->
+      <!-- /.social-auth-link -->
 
       
     </div>
