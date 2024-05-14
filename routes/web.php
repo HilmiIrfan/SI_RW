@@ -33,3 +33,10 @@ Route::get('/laporan', function () {
 Route::get('/bansos', function () {
     return view('bansos.bansos');
 });
+
+Route::get('/galeri', function () {
+    return view('galeri.galeri');
+});
+Route::get('/pengurus', function () {
+    return view('pengurus.pengurus');
+});
