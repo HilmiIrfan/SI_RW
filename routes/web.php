@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FileUploadController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,3 +30,6 @@ Route::get('/laporan', function () {
     return view('laporan.laporan');
 });
 
+Route::get('/bansos', function () {
+    return view('bansos.bansos');
+});
