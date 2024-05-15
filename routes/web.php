@@ -41,6 +41,7 @@ Route::get('/galeri', function () {
 Route::get('/pengurus', function () {
     return view('pengurus.pengurus');
 });
+
 Route::post('cek-login', [AuthController::class, 'cek_login'])->name('cek_login');
 
 
