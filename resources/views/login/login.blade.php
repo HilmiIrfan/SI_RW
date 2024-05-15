@@ -27,11 +27,21 @@
   <div class="card" style="border-radius: 8px;">
     <div class="card-body login-card-body" style="border-radius: 10px;">
       <p class="login-box-msg"></p>
-
-      <form action="" method="post">
+      
+      @if ($errors->any())
+      <div class="alert alert-danger">
+          <ul>
+              @foreach ($errors->all() as $error)
+                  <li>{{ $error }}</li>
+              @endforeach
+          </ul>
+      </div>
+  @endif
+      <form action="{{ url('/cek-login') }}" method="POST">
+        @csrf
         <div class="text-center" style="color:black">
           <label for="username">Username</label> <br>
-          <input type="username" class="form-control text-center" font="ubuntu" style="background-color: #B0C4DE "placeholder="Masukkan Username">
+          <input type="text" id="username" name="username" class="form-control text-center" font="ubuntu" style="background-color: #B0C4DE "placeholder="Masukkan Username" required>
           <div class="input-group-append">
             
           </div>
@@ -40,7 +50,7 @@
         <div class="text-center" style="color:black">
           <label for="password">Password</label> 
           <div class="input-group mb-3">
-          <input type="Password" class="form-control text-center" font="ubuntu" style="background-color: #B0C4DE; border-radius: 0px" placeholder="Masukkan Password ">
+          <input type="Password" id="password" name="password" class="form-control text-center" font="ubuntu" style="background-color: #B0C4DE; border-radius: 0px" placeholder="Masukkan Password " required>
           <div class="input-group-append" style="background-color: #B0C4DE; border-radius: 4px;">
             <div class="input-group-text">
               <span class="fas fa-eye-slash"></span>

@@ -1,4 +1,3 @@
-
 <?php
 
 namespace App\Models;
@@ -12,42 +11,28 @@ class UserModel extends Authenticatable implements JWTSubject
 {
     use HasFactory;
 
-    /**
-     * Get the identifier that will be stored in the subject claim of the JWT.
-     *
-     * @return mixed
-     */
+    protected $table = 'user';
+    protected $primaryKey = 'username';
+    protected $username = 'username';
+    public $incrementing = false;
+    public $timestamps = false;
+
+    protected $fillable = ['username', 'password', 'level_user', 'role'];
+
+    protected $hidden = ['password'];
+
     public function getJWTIdentifier()
     {
         return $this->getKey();
     }
 
-    /**
-     * Return a key value array, containing any custom claims to be added to the JWT.
-     *
-     * @return array
-     */
     public function getJWTCustomClaims()
     {
         return [];
     }
 
-    protected $table = 'm_user';
-    protected $primaryKey = 'user_id';
-    /**
-     * The attributes that are mass assignable
-     * 
-     * @var array
-     */
-    protected $fillable = ['level_id', 'username', 'nama', 'password'];
-
-    /**
-     * Relationship with LevelModel
-     *
-     * @return BelongsTo
-     */
-    public function level(): BelongsTo
+    public function level()
     {
-        return $this->belongsTo(LevelModel::class, 'level_id', 'level_id');
+        return $this->belongsTo(LevelModel::class, 'level_user');
     }
 }
