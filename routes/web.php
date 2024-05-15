@@ -40,3 +40,4 @@ Route::get('/galeri', function () {
 Route::get('/pengurus', function () {
     return view('pengurus.pengurus');
 });
+

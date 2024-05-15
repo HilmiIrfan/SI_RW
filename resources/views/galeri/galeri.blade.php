@@ -4,7 +4,7 @@
     
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: Ubuntu;
             margin: 10;
             padding: 10;
             background-color: #f0f0f0;
@@ -107,20 +107,7 @@
 
         
     </style>
-    <div class="navbar">
-        <img src="{{ asset('adminlte/dist/img/AdminLTELogo.png') }}" alt="Logo">
-        <div class="menu">
-            <a href="#">HOME</a>
-            <a href="#">INFORMASI</a>
-            <a href="#">LAPORAN</a>
-            <a href="#">AGENDA</a>
-            <a href="#" class="active">GALERI</a>
-            <a href="#">PENGURUS</a>
-            <a href="#">BANSOS</a>
-            <a href="#">LOGIN</a>
-        </div>
-        <div class="search">Search</div>
-    </div>
+    
     <br>
     <div class="gallery-container">
         <div class="gallery-item fasilitas-image">

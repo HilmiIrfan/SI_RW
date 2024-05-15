@@ -4,44 +4,50 @@
 
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: Ubuntu;
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
         }
 
         .container {
-            width: 80%;
-            max-width: 600px;
-            margin: 50px auto;
+            width: 200%;
+            max-width: 700px;
+            margin: 80px auto;
+            margin-top: 15px;
             background-color: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
         }
 
         h1 {
             text-align: center;
+            font-size: 25px;
         }
 
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 10px;
+            display: flex;
         }
 
         label {
             display: block;
             margin-bottom: 5px;
+            width: 30%; /* Adjust the width as needed */
         }
 
         input[type="text"],
         input[type="tel"],
         select,
         textarea {
-            width: 100%;
-            padding: 10px;
+            width: 60%;
+            padding: 5px;
             border: 1px solid #ccc;
-            border-radius: 3px;
+            border-radius: 5px;
+             
         }
+        
 
         button {
             width: 100%;
@@ -65,18 +71,20 @@
             <form action="#" method="post">
                 <div class="form-group">
                     <label for="nama">Nama:</label>
-                    <input type="text" id="nama" name="nama" required>
+                    <input type="text" id="nama" placeholder="Masukkan Nama" name="nama" required>
                 </div>
                 <div class="form-group">
                     <label for="subject">Subject:</label>
                     <select id="subject" name="subject" required>
-                        <option value="Pertanyaan">Kritik&Saran</option>
+                        <option value="Pertanyaan">Subject</option>
+                        <option value="Komentar">Kritik&saran</option>
                         <option value="Komentar">Laporan</option>
+
                     </select>
                 </div>
                 <div class="form-group">
                     <label for="nomor-hp">Nomor HP:</label>
-                    <input type="tel" id="nomor-hp" name="nomor-hp" pattern="[0-9]{10,12}" required>
+                    <input type="tel" id="nomor-hp" placeholder="Masukkan Nomor Telp" name="nomor-hp" pattern="[0-9]{10,12}" required>
                 </div>
                 <div class="form-group">
                     <label for="warga-rt">Warga RT:</label>
@@ -95,7 +103,7 @@
                 </div>
                 <div class="form-group">
                     <label for="pesan">Pesan:</label>
-                    <textarea id="pesan" name="pesan" rows="5" required></textarea>
+                    <textarea id="pesan" name="pesan" placeholder="Masukkan Pesan" rows="5" required></textarea>
                 </div>
                 <button type="submit">Kirim</button>
             </form>
