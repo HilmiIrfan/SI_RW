@@ -31,15 +31,31 @@ class AuthController extends Controller
     }
 
     public function login(Request $request)
-    {
-        $credentials = $request->only('username', 'password');
+{
+    $credentials = $request->only('username', 'password');
 
-        if (!$token = Auth::guard('api')->attempt($credentials)) {
-            return response()->json(['error' => 'Unauthorized'], 401);
-        }
-
-        return $this->respondWithToken($token);
+    if (!$token = Auth::guard('api')->attempt($credentials)) {
+        return response()->json(['error' => 'Unauthorized'], 401);
     }
+
+    // Retrieve the authenticated user
+    $user = Auth::guard('api')->user();
+
+    // Check the user's level and customize the response accordingly
+    switch ($user->level_user) {
+        case 1:
+            return redirect()->route('admin.dashboard'); // Mengarahkan admin ke dashboard admin
+            break;
+        case 2:
+            return redirect()->route('rw.dashboard');
+            break;
+        case 3:
+            return redirect()->route('rt.dashboard');
+            break;
+        default:
+            return redirect()->route('warga.dashboard');
+    }
+}
 
     public function logout()
     {
@@ -76,16 +92,16 @@ class AuthController extends Controller
     
         if (Auth::attempt($credentials)) {
             $user = Auth::user();
-            if ($user->level_id == '1') {
+            if ($user->level_user == '1') {
                 return response()->json(['message' => 'Admin authenticated'], 200);
-            } elseif ($user->level_id == '2') {
+            } elseif ($user->level_user == '2') {
                 return response()->json(['message' => 'Manager authenticated'], 200);
             } else {
                 return response()->json(['message' => 'User authenticated'], 200);
             }
         } else {
             // Jika tidak ada pengguna yang cocok dengan kredensial yang diberikan
-            return redirect()->route('login')->withErrors(['login_failed' => 'Invalid username or password']);
+            return response()->json(['error' => 'Unauthorized'], 401);
         }
     }
 
