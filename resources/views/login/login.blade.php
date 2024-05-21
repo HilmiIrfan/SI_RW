@@ -37,7 +37,7 @@
           </ul>
       </div>
   @endif
-      <form action="{{ url('/cek-login') }}" method="POST">
+      <form action="{{ url('/login') }}" method="POST">
         @csrf
         <div class="text-center" style="color:black">
           <label for="username">Username</label> <br>
