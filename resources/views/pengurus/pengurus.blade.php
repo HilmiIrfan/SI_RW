@@ -1,215 +1,248 @@
+
 @extends('layout.template')
 
 @section('content')
-    
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 10;
-            padding: 10;
-            background-color: #f0f0f0;
-        }
 
-        h1 {
-            text-align: center;
-            margin-top: 25px;
-        }
+<link rel="stylesheet" href="{{asset ('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback') }}">
 
-        .gallery-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 10px;
-            padding: 10px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
+<link rel="stylesheet" href="{{asset ('adminlte/plugins/fontawesome-free/css/all.min.css') }}">
 
-        .gallery-item {
-            border: 2px solid #ccc;
-            overflow: hidden;
-            position: relative;
-        }
+<link rel="stylesheet" href="{{asset ('adminlte/dist/css/adminlte.min.css?v=3.2.0') }}">
 
-        .gallery-item img {
-            display: block;
-            max-width: 270px; 
-            max-height: 270px; 
-            width: auto;
-            height: auto;
-            transition: transform 0.3s ease;
-        }
+<body class="hold-transition sidebar-mini">
 
-        .gallery-item:hover img {
-            transform: scale(1.1);
-        }
+<div class="wrapper">
 
-        .rt01-image .description {
-            padding: 5px; /* Jarak yang lebih besar */
-            width: 150px; /* Lebar yang lebih besar */
-        }
-        .rt02-image .description {
-            padding: 5px; /* Jarak yang lebih besar */
-            width: 150px; /* Lebar yang lebih besar */
-        }
-        .rt03-image .description {
-            padding: 5px; /* Jarak yang lebih kecil */
-            width: 150px; /* Lebar yang lebih kecil */
-        }
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-        }
+<section class="content">
 
-        .navbar {
-            display: flex;
-            align-items: center;
-            background-color: #e0e0e0;
-            padding: 10px;
-            justify-content: space-between;
-        }
+<div class="card card-solid">
+<div class="card-body pb-0">
+<div class="row">
+<div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch flex-column">
+<div class="card bg-light d-flex flex-fill">
+<div class="card-header text-muted border-bottom-0">
+Kontak Pengurus 
+</div>
+<div class="card-body pt-0">
+<div class="row">
+<div class="col-7">
+<h2 class="lead"><b>Joko Anwar</b></h2>
+<p class="text-muted text-sm"><b>Ketua RT01</b></p>
+<ul class="ml-4 mb-0 fa-ul text-muted">
+<li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span> Alamat: Jalan Kesatrian 23</li>
+<li class="small"><span class="fa-li"><i class="fas fa-lg fa-phone"></i></span> Telp: 08223455</li>
+</ul>
+</div>
+<div class="col-5 text-center">
+<img src="{{ ('adminlte/dist/img/RT01.jpg') }}" alt="user-avatar" class="img-circle img-fluid">
+</div>
+</div>
+</div>
 
-        .navbar img {
-            height: 30px; /* Atur tinggi logo sesuai keinginan Anda */
-            width: auto;/* Lebar otomatis agar proporsinya tetap terjaga */
-            
-        }
+</div>
+</div>
+<div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch flex-column">
+<div class="card bg-light d-flex flex-fill">
+<div class="card-header text-muted border-bottom-0">
+Kontak Pengurus
+</div>
+<div class="card-body pt-0">
+<div class="row">
+<div class="col-7">
+<h2 class="lead"><b>Bambang Sumono</b></h2>
+<p class="text-muted text-sm"><b>Ketua RT 02</b></p>
+<ul class="ml-4 mb-0 fa-ul text-muted">
+<li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span>Alamat: Jl. Kesatrian Dalam K24</li>
+<li class="small"><span class="fa-li"><i class="fas fa-lg fa-phone"></i></span>Telp: 0822344556</li>
+</ul>
+</div>
+<div class="col-5 text-center">
+<img src="{{ ('adminlte/dist/img/RT02.jpg') }}" alt="user-avatar" class="img-circle img-fluid">
+</div>
+</div>
+</div>
 
-        .navbar .menu {
-            display: flex;
-            flex-grow: 1;
-            justify-content: space-around;
-            margin-left: 20px;
-            margin-right: 20px;
-        }
+</div>
+</div>
+<div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch flex-column">
+<div class="card bg-light d-flex flex-fill">
+<div class="card-header text-muted border-bottom-0">
+Kontak Pengurus 
+</div>
+<div class="card-body pt-0">
+<div class="row">
+<div class="col-7">
+<h2 class="lead"><b>Joko Anwar</b></h2>
+<p class="text-muted text-sm"><b>Ketua RT 03</b></p>
+<ul class="ml-4 mb-0 fa-ul text-muted">
+<li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span>Alamat: Jl.Kesatrian Dalam 23</li>
+<li class="small"><span class="fa-li"><i class="fas fa-lg fa-phone"></i></span>Telp: 084566546</li>
+</ul>
+</div>
+<div class="col-5 text-center">
+<img src="{{ ('adminlte/dist/img/RT03.jpg') }}" alt="user-avatar" class="img-circle img-fluid">
+</div>
+</div>
+</div>
 
-        .navbar .menu a {
-            text-decoration: none;
-            color: #000;
-            padding: 10px 15px;
-            border-radius: 4px;
-            transition: background-color 0.3s ease;
-        }
+</div>
+</div>
+<div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch flex-column">
+<div class="card bg-light d-flex flex-fill">
+<div class="card-header text-muted border-bottom-0">
+Kontak Pengurus
+</div>
+<div class="card-body pt-0">
+<div class="row">
+<div class="col-7">
+<h2 class="lead"><b>Bambang Sumono</b></h2>
+<p class="text-muted text-sm"><b>Ketua RT 04 </b></p>
+<ul class="ml-4 mb-0 fa-ul text-muted">
+<li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span>Alamat: Jl.Kesatrian Dalam 24</li>
+<li class="small"><span class="fa-li"><i class="fas fa-lg fa-phone"></i></span>Telp: 0899797689</li>
+</ul>
+</div>
+<div class="col-5 text-center">
+<img src="{{ ('adminlte/dist/img/RT05.jpg') }}" alt="user-avatar" class="img-circle img-fluid">
+</div>
+</div>
+</div>
 
-        .navbar .menu a:hover,
-        .navbar .menu .active {
-            background-color: #5A9BD5;
-            color: #fff;
-        }
+</div>
+</div>
+<div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch flex-column">
+<div class="card bg-light d-flex flex-fill">
+<div class="card-header text-muted border-bottom-0">
+Kontak Pengurus
+</div>
+<div class="card-body pt-0">
+<div class="row">
+<div class="col-7">
+<h2 class="lead"><b>Joko Anwar</b></h2>
+<p class="text-muted text-sm"><b>Ketua RT 05</b></p>
+<ul class="ml-4 mb-0 fa-ul text-muted">
+<li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span>Alamat: Jl.Kesatrian Dalam 24</li>
+<li class="small"><span class="fa-li"><i class="fas fa-lg fa-phone"></i></span>Telp: 089989999</li>
+</ul>
+</div>
+<div class="col-5 text-center">
+<img src="{{ ('adminlte/dist/img/RT01.jpg') }}" alt="user-avatar" class="img-circle img-fluid">
+</div>
+</div>
+</div>
 
-        .navbar .search {
-            background-color: #5A9BD5;
-            padding: 5px 15px;
-            border-radius: 4px;
-            color: #fff;
-        }
-        .curved-frame {
-  overflow: hidden; /* This hides overflowing content  */
-  border-radius: 50%; /* Creates a circular shape */
-  width: 200px; /* Adjust width as needed */
-  height: 200px; /* Adjust height as needed */
-  position: relative; /* Allows positioning of child element */
-}
+</div>
+</div>
+<div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch flex-column">
+<div class="card bg-light d-flex flex-fill">
+<div class="card-header text-muted border-bottom-0">
+Kontak Pengurus
+</div>
+<div class="card-body pt-0">
+<div class="row">
+<div class="col-7">
+<h2 class="lead"><b>Bambang Sumono</b></h2>
+<p class="text-muted text-sm"><b>Ketua RT 06</b></p>
+<ul class="ml-4 mb-0 fa-ul text-muted">
+<li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span>Alamat: Jl.Kesatrian Dalam 24</li>
+<li class="small"><span class="fa-li"><i class="fas fa-lg fa-phone"></i></span>Telp: 089956656</li>
+</ul>
+</div>
+<div class="col-5 text-center">
+<img src="{{ ('adminlte/dist/img/RT05.jpg') }}" alt="user-avatar" class="img-circle img-fluid">
+</div>
+</div>
+</div>
 
-.curved-frame img {
-  border-radius: inherit; /* Inherits rounded corners from parent */
-  position: absolute; /* Positions image on top of the frame */
-  top: 50%; /* Centers image vertically */
-  left: 50%; /* Centers image horizontally */
-  transform: translate(-50%, -50%); /* Adjusts positioning further  */
-  width: 100%; /* Ensures image fills the frame */
-}
+</div>
+</div>
+<div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch flex-column">
+<div class="card bg-light d-flex flex-fill">
+<div class="card-header text-muted border-bottom-0">
+Kontak Pengurus
+</div>
+<div class="card-body pt-0">
+<div class="row">
+<div class="col-7">
+<h2 class="lead"><b>Joko Anwar</b></h2>
+<p class="text-muted text-sm"><b>Ketua RT 07</b></p>
+<ul class="ml-4 mb-0 fa-ul text-muted">
+<li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span>Alamat: Jl.Kesatrian Dalam 24</li>
+<li class="small"><span class="fa-li"><i class="fas fa-lg fa-phone"></i></span>Telp: 089956656</li>
+</ul>
+</div>
+<div class="col-5 text-center">
+<img src="{{ ('adminlte/dist/img/RT01.jpg') }}" alt="user-avatar" class="img-circle img-fluid">
+</div>
+</div>
+</div>
+
+</div>
+</div>
+<div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch flex-column">
+<div class="card bg-light d-flex flex-fill">
+<div class="card-header text-muted border-bottom-0">
+Kontak Pengurus
+</div>
+<div class="card-body pt-0">
+<div class="row">
+<div class="col-7">
+<h2 class="lead"><b>Bambang Sumono</b></h2>
+<p class="text-muted text-sm"><b>Ketua RT 08</b></p>
+<ul class="ml-4 mb-0 fa-ul text-muted">
+<li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span>Alamat: Jl.Kesatrian Dalam 24</li>
+<li class="small"><span class="fa-li"><i class="fas fa-lg fa-phone"></i></span>Telp: 089999878</li>
+</ul>
+</div>
+<div class="col-5 text-center">
+<img src="{{ ('adminlte/dist/img/RT05.jpg') }}" alt="user-avatar" class="img-circle img-fluid">
+</div>
+</div>
+</div>
+
+</div>
+</div>
+<div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch flex-column">
+<div class="card bg-light d-flex flex-fill">
+<div class="card-header text-muted border-bottom-0">
+Kontak Pengurus
+</div>
+<div class="card-body pt-0">
+<div class="row">
+<div class="col-7">
+<h2 class="lead"><b>Joko Anawar</b></h2>
+<p class="text-muted text-sm"><b>Ketua RT 09</b></p>
+<ul class="ml-4 mb-0 fa-ul text-muted">
+<li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span>Alamat: Jl.Kesatrian Dalam 24</li>
+<li class="small"><span class="fa-li"><i class="fas fa-lg fa-phone"></i></span>Telp: 08998979</li>
+</ul>
+</div>
+<div class="col-5 text-center">
+<img src="{{ ('adminlte/dist/img/RT01.jpg') }}" alt="user-avatar" class="img-circle img-fluid">
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+</section>
+
+</div>
+</aside>
+</div>
 
 
-        
-    </style>
+<script src="{{asset ('adminlte/plugins/jquery/jquery.min.js') }}"></script>
 
-    
-    <br>
-    <div class="gallery-container">
-        <div class="gallery-item rt01-image">
-            <img src="{{ asset('adminlte/dist/img/RT01.jpg') }}" alt="rt01">
-            <div class="description">
-                <p><b>Ketua RT 01</b></p>
-                <p>Bambang Sumono</p>
-                <p>Jl. Kesatrian Dalam K24</p>
-                <p>+62 822-3043-8150</p>
-            </div>
-        </div>
-        <div class="gallery-item rt02-image">
-            <img src="{{ asset('adminlte/dist/img/RT02.jpg') }}" alt="rt02">
-            <div class="description">
-                <p><b>Ketua RT 02</b></p>
-                <p>Joko Anwar</p>
-                <p>Jl. Kesatrian Dalam K24</p>
-                <p>+62 822-3043-8150</p>
-            </div>
-        </div>
-        <div class="gallery-item rt03-image">
-            <img src="{{ asset('adminlte/dist/img/RT03.jpg') }}" alt="rt03">
-            <div class="description">
-                <p><b>Ketua RT 03</b></p>
-                <p>Bambang Sumono</p>
-                <p>Jl. Kesatrian Dalam K24</p>
-                <p>+62 822-3043-8150</p>
-            </div>
-        </div>
-        <div class="gallery-item rt05-image">
-            <img src="{{ asset('adminlte/dist/img/RT05.jpg') }}" alt="rt05">
-            <div class="description">
-                <p><b>Ketua RT 04</b></p>
-                <p>Bambang Sumono</p>
-                <p>Jl. Kesatrian Dalam K24</p>
-                <p>+62 822-3043-8150</p>
-            </div>
-        </div>
-        <div class="gallery-item rt02-image">
-            <img src="{{ asset('adminlte/dist/img/RT02.jpg') }}" alt="rt02">
-            <div class="description">
-                <p><b>Ketua RT 05</b></p>
-                <p>Joko Anwar</p>
-                <p>Jl. Kesatrian Dalam K24</p>
-                <p>+62 822-3043-8150</p>
-            </div>
-        </div>
-        <div class="gallery-item rt03-image">
-            <img src="{{ asset('adminlte/dist/img/RT03.jpg') }}" alt="rt03">
-            <div class="description">
-                <p><b>Ketua RT 06</b></p>
-                <p>Bambang Sumono</p>
-                <p>Jl. Kesatrian Dalam K24</p>
-                <p>+62 822-3043-8150</p>
-            </div>
-        </div>
-        <div class="gallery-item rt02-image">
-            <img src="{{ asset('adminlte/dist/img/RT02.jpg') }}" alt="rt02">
-            <div class="description">
-                <p><b>Ketua RT 07</b></p>
-                <p>Joko Anwar</p>
-                <p>Jl. Kesatrian Dalam K24</p>
-                <p>+62 822-3043-8150</p>
-            </div>
-        </div>
-        <div class="gallery-item rt02-image">
-            <img src="{{ asset('adminlte/dist/img/RT02.jpg') }}" alt="rt02">
-            <div class="description">
-                <p><b>Ketua RT 08</b></p>
-                <p>Joko Anwar</p>
-                <p>Jl. Kesatrian Dalam K24</p>
-                <p>+62 822-3043-8150</p>
-            </div>
-        </div>
-        <div class="gallery-item rt05-image">
-            <img src="{{ asset('adminlte/dist/img/RT05.jpg') }}" alt="rt05">
-            <div class="description">
-                <p><b>Ketua RT 09</b></p>
-                <p>Bambang Sumono</p>
-                <p>Jl. Kesatrian Dalam K24</p>
-                <p>+62 822-3043-8150</p>
-            </div>
-        </div>
-        
-    </div>
+<script src="{{asset ('adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
+<script src="{{asset ('adminlte/dist/js/adminlte.min.js?v=3.2.0') }}"></script>
+
+<script src="{{asset ('adminlte/dist/js/demo.js') }}"></script>
+</body>
+</html>
 @endsection

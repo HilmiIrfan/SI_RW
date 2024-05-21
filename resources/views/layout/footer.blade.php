@@ -2,7 +2,7 @@
     <div class="float-right d-none d-sm-block">
       
     </div>
-    <strong>&copy; RW 01 Kesatrian Dalam</strong> 
+    <strong>&copy; <b>POLINEMA KELOMPOK 1</b></strong> 
   </footer>
 
   <!-- Control Sidebar -->
