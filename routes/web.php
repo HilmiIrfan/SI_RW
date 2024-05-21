@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\FileUploadController;
 use Illuminate\Support\Facades\Route;
+Use App\Http\Controllers\Warga\GaleriController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +20,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/admin', [AdminController::class, 'index'])->name('admin.dashboard');
 
 Route::get('/login', function () {
     return view('login.login');
@@ -35,13 +38,12 @@ Route::get('/bansos', function () {
     return view('bansos.bansos');
 });
 
-Route::get('/galeri', function () {
-    return view('galeri.galeri');
-});
+Route::get('/galeri', [GaleriController::class, 'index'])->name('galeri.index');
+
 Route::get('/pengurus', function () {
     return view('pengurus.pengurus');
 });
 
-Route::post('cek-login', [AuthController::class, 'cek_login'])->name('cek_login');
+Route::post('login', [AuthController::class, 'login'])->name('login');
 
 
