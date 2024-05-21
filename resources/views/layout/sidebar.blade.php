@@ -56,7 +56,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="../widgets.html" class="nav-link">
+          <a href="pengurus" class="nav-link">
             <i class="nav-icon fas fa-users"></i>
             <p>
               Pengurus
@@ -65,7 +65,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="../widgets.html" class="nav-link">
+          <a href="bansos" class="nav-link">
             <i class="nav-icon fas fa-columns"></i>
             <p>
               Bansos

@@ -125,19 +125,7 @@
         
     </style>
 
-    <div class="navbar">
-        <div class="menu">
-            <a href="#">HOME</a>
-            <a href="#">INFORMASI</a>
-            <a href="#">LAPORAN</a>
-            <a href="#">AGENDA</a>
-            <a href="#">GALERI</a>
-            <a href="#" class="active">PENGURUS</a>
-            <a href="#">BANSOS</a>
-            <a href="#">LOGIN</a>
-        </div>
-        <div class="search">Search</div>
-    </div>
+    
     <br>
     <div class="gallery-container">
         <div class="gallery-item rt01-image">

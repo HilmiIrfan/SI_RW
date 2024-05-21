@@ -1,4 +1,4 @@
-
+@extends('layout.template')
 
 @section('content')
     <style>
@@ -11,16 +11,20 @@
 
         /* Style container */
         .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+            width: 200%;
+            max-width: 600px;
+            margin: 50px auto;
+            margin-top: 15px;
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
         }
 
         /* Style form */
         .form-group {
             margin-bottom: 10px;
+            
         }
 
         label {
@@ -78,11 +82,11 @@
 
     <body>
         <div class="container">
-            <h2>Form Input Bansos</h2>
+            <h2>Form Data Input Bansos</h2>
             <form action="#" method="post">
                 <div class="form-group">
                     <label for="nomor">Nomor:</label>
-                    <input type="text" id="nomor" name="nomor" required>
+                    <input type="text" id="nomor"  name="nomor" required>
                 </div>
                 <div class="form-group">
                     <label for="uraian">Uraian Bansos:</label>
@@ -179,3 +183,4 @@
     </body>
 
     </html>
+    @endsection

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\FileUploadController;
 use Illuminate\Support\Facades\Route;
 Use App\Http\Controllers\Warga\GaleriController;
@@ -40,3 +41,7 @@ Route::get('/galeri', [GaleriController::class, 'index'])->name('galeri.index');
 Route::get('/pengurus', function () {
     return view('pengurus.pengurus');
 });
+
+Route::post('cek-login', [AuthController::class, 'cek_login'])->name('cek_login');
+
+
