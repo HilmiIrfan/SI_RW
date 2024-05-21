@@ -59,7 +59,7 @@
           <a href="pengurus" class="nav-link">
             <i class="nav-icon fas fa-users"></i>
             <p>
-              Pengurus
+              Kontak Pengurus
               <span class="right badge badge-danger"></span>
             </p>
           </a>
@@ -68,8 +68,8 @@
           <a href="bansos" class="nav-link">
             <i class="nav-icon fas fa-columns"></i>
             <p>
-              Bansos
+              Pengajuan Bansos
               <span class="right badge badge-danger"></span>
             </p>
-          </a>
+          </a>
         
