@@ -52,8 +52,7 @@
           <div class="input-group mb-3">
           <input type="Password" id="password" name="password" class="form-control text-center" font="ubuntu" style="background-color: #B0C4DE; border-radius: 0px" placeholder="Masukkan Password " required>
           <div class="input-group-append" style="background-color: #B0C4DE; border-radius: 4px;">
-            <div class="input-group-text">
-              <span class="fas fa-eye-slash"></span>
+            
             </div>
           </div>
         </div>
@@ -63,10 +62,15 @@
       <div class="text-center">
          <button type="submit" class="btn btn-primary" font="buenard"><b>Login</b></button>
         </div>
-        <br><br>
+        <br>
 <!-- /.col -->
 
       </form>
+       <!-- Tombol Kembali ke Dashboard -->
+       <div class="text-center">
+        <a href="{{ url('/welcome') }}" class="btn btn-secondary"><b>Kembali ke Dashboard</b></a>
+      </div>
+      <br><br>
         <div class="rectangle" style="width: 360px; height: 35px; background-color: #A79898; border: -5px solid #;
         border-radius: 5px; padding: 0px; margin:-20px;">
         <a href="#" class="btn btn-block btn-linear">

@@ -60,6 +60,10 @@ Route::get('/pengurus', function () {
     return view('pengurus.pengurus');
 });
 
+Route::get('/welcome', function () {
+    return view('/welcome');
+})->name('welcome');
+
 Route::post('login', [AuthController::class, 'login'])->name('login');
 Route::post('logout', [AuthController::class, 'logout'])->name('logout');
 
