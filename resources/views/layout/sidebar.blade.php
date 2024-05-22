@@ -47,7 +47,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="{{ route('galeri.index') }}" class="nav-link">
+          <a href="galerishow" class="nav-link">
             <i class="nav-icon fas fa-image"></i>
             <p>
               Galeri
@@ -71,5 +71,5 @@
               Pengajuan Bansos
               <span class="right badge badge-danger"></span>
             </p>
-          </a>
+          </a>
         

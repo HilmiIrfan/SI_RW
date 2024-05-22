@@ -136,7 +136,7 @@
                 <button type="submit">Simpan</button>
             </form>
 
-            <h2>Daftar Bansos</h2>
+            {{-- <h2>Daftar Bansos</h2>
             <table>
                 <thead>
                     <tr>
@@ -177,7 +177,7 @@
                     }
                     ?>
                 </tbody>
-            </table>
+            </table> --}}
 
         </div>
     </body>

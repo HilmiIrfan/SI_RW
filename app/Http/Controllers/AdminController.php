@@ -10,4 +10,12 @@ class AdminController extends Controller
     {
         return view('dashadmin'); // Pastikan Anda memiliki view yang sesuai
     }
+    public function rw()
+    {
+        return view('dashrw'); // Pastikan Anda memiliki view yang sesuai
+    }
+    public function rt()
+    {
+        return view('dashrt'); // Pastikan Anda memiliki view yang sesuai
+    }
 }

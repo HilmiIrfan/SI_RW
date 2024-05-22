@@ -57,12 +57,12 @@ class AuthController extends Controller
     }
 }
 
-    public function logout()
-    {
-        Auth::guard('api')->logout();
+public function logout()
+{
 
-        return response()->json(['message' => 'Successfully logged out']);
-    }
+    return redirect()->route('login'); // Redirect ke halaman login setelah logout
+}
+
 
     public function me()
     {

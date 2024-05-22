@@ -33,6 +33,29 @@ class LaporanController extends Controller
             'activeMenu' => $activeMenu
         ]);
     }
+    public function store(Request $request)
+    {
+        // Validasi data
+        $request->validate([
+            'nama' => 'required|string|max:255',
+            'subject' => 'required|string',
+            'nomor-hp' => 'required|numeric|digits_between:10,12',
+            'warga-rt' => 'required|string',
+            'pesan' => 'required|string',
+        ]);
+
+        // Menyimpan data ke dalam database
+        Laporan::create([
+            'nama_pelapor' => $request->nama,
+            'subject' => $request->subject,
+            'no_hp' => $request->input('nomor-hp'),
+            'domisili_rt' => $request->input('warga-rt'),
+            'pesan' => $request->pesan,
+        ]);
+
+        // Redirect atau memberikan response setelah data tersimpan
+        return redirect()->back()->with('success', 'Laporan berhasil dikirim.');
+    }
 
     public function list(Request $request)
     {
@@ -51,113 +74,117 @@ class LaporanController extends Controller
             ->make(true);
     }
 
-    public function create()
+    // public function create()
+    // {
+    //     $breadcrumb = (object)[
+    //         'title' => 'Tambah Kategori',
+    //         'list' => ['Home', 'Kategori', 'Tambah']
+    //     ];
+
+    //     $page = (object)[
+    //         'title' => 'Tambah Kategori Baru',
+    //     ];
+
+    //     $activeMenu = 'kategori';
+
+    //     return view('kategori.create', [
+    //         'breadcrumb' => $breadcrumb,
+    //         'page' => $page,
+    //         'activeMenu' => $activeMenu
+    //     ]);
+    // }
+
+    // public function store(Request $request)
+    // {
+    //     $request->validate([
+    //         'kategori_kode' => 'required|string|unique:m_kategori|min:3',
+    //         'kategori_nama' => 'required|string',
+    //     ]);
+
+    //     KategoriModel::create([
+    //         'kategori_kode' => $request->kategori_kode,
+    //         'kategori_nama' => $request->kategori_nama
+    //     ]);
+
+    //     return redirect('/kategori')->with('success', 'Data Kategori baru telah ditambahkan');
+    // }
+
+    // public function show(string $id)
+    // {
+    //     $kategori = KategoriModel::find($id);
+
+    //     $breadcrumb = (object)[
+    //         'title' => 'Detail Kategori',
+    //         'list'  => ['Home', 'Kategori', 'Detail']
+    //     ];
+
+    //     $page = (object)[
+    //         'title' => 'Detail Kategori'
+    //     ];
+
+    //     $activeMenu = 'kategori';
+
+    //     return view('kategori.show', [
+    //         'breadcrumb' => $breadcrumb,
+    //         'page' => $page,
+    //         'kategori' => $kategori,
+    //         'activeMenu' => $activeMenu
+    //     ]);
+    // }
+
+    // public function edit(string $id)
+    // {
+    //     $kategori = KategoriModel::find($id);
+
+    //     $breadcrumb = (object)[
+    //         'title' => 'Edit Kategori',
+    //         'list'  => ['Home', 'Kategori', 'Edit']
+    //     ];
+
+    //     $page = (object)[
+    //         'title' => 'Edit Kategori'
+    //     ];
+    //     $activeMenu = 'kategori';
+
+    //     return view('kategori.edit', [
+    //         'breadcrumb' => $breadcrumb,
+    //         'page' => $page,
+    //         'kategori' => $kategori,
+    //         'activeMenu' => $activeMenu
+    //     ]);
+    // }
+
+    // public function update(Request $request, string $id)
+    // {
+    //     $validated = $request->validate([
+    //         'kategori_kode' => 'required|min:3|unique:m_kategori,kategori_kode,'.$id.',kategori_id',
+    //         'kategori_nama' => 'required',
+    //     ]);
+
+    //     KategoriModel::find($id)->update([
+    //         'kategori_kode' => $request->kategori_kode,
+    //         'kategori_nama' => $request->kategori_nama
+    //     ]);
+
+    //     return redirect('/kategori')->with('success', 'Data Kategori berhasil diubah');
+    // }
+
+    // public function destroy(string $id)
+    // {
+    //     $check = KategoriModel::find($id);
+    //     if (!$check) {
+    //         return redirect('/kategori')->with('error', 'Data Kategori tidak ditemukan');
+    //     }
+    //     try {
+    //         KategoriModel::destroy($id);
+    //         return redirect('/kategori')->with('success', 'Data Kategori berhasil dihapus');
+    //     } catch (\Illuminate\Database\QueryException $e) {
+    //         return redirect('/kategori')->with('error', 'Data Kategori gagal dihapus karena masih terdapat tabel lain yang terkait dengan data ini');
+    //     }
+    // }
+    public function show(Laporan $laporan)
     {
-        $breadcrumb = (object)[
-            'title' => 'Tambah Kategori',
-            'list' => ['Home', 'Kategori', 'Tambah']
-        ];
-
-        $page = (object)[
-            'title' => 'Tambah Kategori Baru',
-        ];
-
-        $activeMenu = 'kategori';
-
-        return view('kategori.create', [
-            'breadcrumb' => $breadcrumb,
-            'page' => $page,
-            'activeMenu' => $activeMenu
-        ]);
-    }
-
-    public function store(Request $request)
-    {
-        $request->validate([
-            'kategori_kode' => 'required|string|unique:m_kategori|min:3',
-            'kategori_nama' => 'required|string',
-        ]);
-
-        KategoriModel::create([
-            'kategori_kode' => $request->kategori_kode,
-            'kategori_nama' => $request->kategori_nama
-        ]);
-
-        return redirect('/kategori')->with('success', 'Data Kategori baru telah ditambahkan');
-    }
-
-    public function show(string $id)
-    {
-        $kategori = KategoriModel::find($id);
-
-        $breadcrumb = (object)[
-            'title' => 'Detail Kategori',
-            'list'  => ['Home', 'Kategori', 'Detail']
-        ];
-
-        $page = (object)[
-            'title' => 'Detail Kategori'
-        ];
-
-        $activeMenu = 'kategori';
-
-        return view('kategori.show', [
-            'breadcrumb' => $breadcrumb,
-            'page' => $page,
-            'kategori' => $kategori,
-            'activeMenu' => $activeMenu
-        ]);
-    }
-
-    public function edit(string $id)
-    {
-        $kategori = KategoriModel::find($id);
-
-        $breadcrumb = (object)[
-            'title' => 'Edit Kategori',
-            'list'  => ['Home', 'Kategori', 'Edit']
-        ];
-
-        $page = (object)[
-            'title' => 'Edit Kategori'
-        ];
-        $activeMenu = 'kategori';
-
-        return view('kategori.edit', [
-            'breadcrumb' => $breadcrumb,
-            'page' => $page,
-            'kategori' => $kategori,
-            'activeMenu' => $activeMenu
-        ]);
-    }
-
-    public function update(Request $request, string $id)
-    {
-        $validated = $request->validate([
-            'kategori_kode' => 'required|min:3|unique:m_kategori,kategori_kode,'.$id.',kategori_id',
-            'kategori_nama' => 'required',
-        ]);
-
-        KategoriModel::find($id)->update([
-            'kategori_kode' => $request->kategori_kode,
-            'kategori_nama' => $request->kategori_nama
-        ]);
-
-        return redirect('/kategori')->with('success', 'Data Kategori berhasil diubah');
-    }
-
-    public function destroy(string $id)
-    {
-        $check = KategoriModel::find($id);
-        if (!$check) {
-            return redirect('/kategori')->with('error', 'Data Kategori tidak ditemukan');
-        }
-        try {
-            KategoriModel::destroy($id);
-            return redirect('/kategori')->with('success', 'Data Kategori berhasil dihapus');
-        } catch (\Illuminate\Database\QueryException $e) {
-            return redirect('/kategori')->with('error', 'Data Kategori gagal dihapus karena masih terdapat tabel lain yang terkait dengan data ini');
-        }
+        return view('laporans.show', compact('laporan'));
     }
 
 }

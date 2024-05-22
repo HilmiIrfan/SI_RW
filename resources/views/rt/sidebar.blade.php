@@ -2,7 +2,7 @@
   
 
     <!-- SidebarSearch Form -->
-    <div class="form-inline">
+    <div class="form-inline" >
       <div class="input-group" data-widget="sidebar-search">
         <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
         <div class="input-group-append">
@@ -29,42 +29,19 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="laporanshow" class="nav-link">
-            <i class="nav-icon far fa-envelope"></i>
-            <p>
-              Laporan
-              <span class="right badge badge-danger"></span>
-            </p>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="agenda" class="nav-link">
-            <i class="nav-icon fas fa-calendar-alt"></i>
-            <p>
-              Agenda
-              <span class="right badge badge-danger"></span>
-            </p>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="{{ route('galeri.index') }}" class="nav-link">
-            <i class="nav-icon fas fa-image"></i>
-            <p>
-              Galeri
-              <span class="right badge badge-danger"></span>
-            </p>
-          </a>
-        </li>
-        <li class="nav-item">
           <a href="pengurus" class="nav-link">
             <i class="nav-icon fas fa-users"></i>
             <p>
-              Pengurus
+              Iuran Warga
               <span class="right badge badge-danger"></span>
             </p>
           </a>
         </li>
-
+        <li class="nav-item">
+          <a href="bansos" class="nav-link">
+            <i class="nav-icon fas fa-columns"></i>
+            <p>
+              Filter Bansos
               <span class="right badge badge-danger"></span>
             </p>
           </a>

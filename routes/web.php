@@ -3,6 +3,8 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\FileUploadController;
+use App\Http\Controllers\LaporanAdminController;
+use App\Http\Controllers\LaporanController;
 use Illuminate\Support\Facades\Route;
 Use App\Http\Controllers\Warga\GaleriController;
 
@@ -21,6 +23,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/admin', [AdminController::class, 'index'])->name('admin.dashboard');
+Route::get('/rt', [AdminController::class, 'rt'])->name('rt.dashboard');
+Route::get('/rw', [AdminController::class, 'rw'])->name('rw.dashboard');
+
 
 Route::get('/login', function () {
     return view('login.login');
@@ -37,7 +42,9 @@ Route::get('/laporan', function () {
 Route::get('/bansos', function () {
     return view('bansos.bansos');
 });
-
+Route::get('/galerishow', function () {
+    return view('galeri.galeri');
+});
 Route::get('/galeri', [GaleriController::class, 'index'])->name('galeri.index');
 
 Route::get('/pengurus', function () {
@@ -45,5 +52,8 @@ Route::get('/pengurus', function () {
 });
 
 Route::post('login', [AuthController::class, 'login'])->name('login');
+Route::post('logout', [AuthController::class, 'logout'])->name('logout');
 
-
+Route::get('/laporanshow', [LaporanAdminController::class,'index']);
+Route::get('/showlap', [LaporanAdminController::class,'show']);
+Route::get('/laporan/create', [LaporanAdminController::class,'create']);
