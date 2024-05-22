@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\BansosController;
 use App\Http\Controllers\FileUploadController;
 use App\Http\Controllers\LaporanAdminController;
 use App\Http\Controllers\LaporanController;
@@ -42,6 +43,10 @@ Route::get('/laporan', function () {
 Route::get('/bansos', function () {
     return view('bansos.bansos');
 });
+Route::get('/bansosfilt', [BansosController::class, 'index']);
+Route::post('/bansos/terima/{id}', [BansosController::class, 'terima'])->name('bansos.terima');
+Route::post('/bansos', [BansosController::class, 'store'])->name('bansos.store');
+
 Route::get('/galerishow', function () {
     return view('galeri.galeri');
 });
