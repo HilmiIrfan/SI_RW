@@ -52,8 +52,7 @@
           <div class="input-group mb-3">
           <input type="Password" id="password" name="password" class="form-control text-center" font="ubuntu" style="background-color: #B0C4DE; border-radius: 0px" placeholder="Masukkan Password " required>
           <div class="input-group-append" style="background-color: #B0C4DE; border-radius: 4px;">
-            <div class="input-group-text">
-              <span class="fas fa-eye-slash"></span>
+            
             </div>
           </div>
         </div>
@@ -63,7 +62,7 @@
       <div class="text-center">
          <button type="submit" class="btn btn-primary" font="buenard"><b>Login</b></button>
         </div>
-        <br><br>
+        <br>
 <!-- /.col -->
 
       </form>
