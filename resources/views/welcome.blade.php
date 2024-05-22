@@ -24,7 +24,8 @@
         padding: 20px;
         border-radius: 10px;
         color: white;
-        font-size: 18px;
+        font-size: 22px;
+        text-align: center;
     }
 
     .card-header .text-container span {
@@ -112,8 +113,14 @@
             </div>
             <div class="text-container">
                 <h1>SEJARAH TERBENTUKNYA RW. 01 KELURAHAN KESATRIAN-KECAMATAN BLIMBING KOTA MALANG</h1>
-                <p> Isikan Sejarahnyta yaaa....Karna Saya Tidak Tau</p>
-                <h1><br></h1>
+                <p> RW 1 Kesatrian, yang terletak di Kelurahan Blimbing, Kecamatan Malang, memiliki sejarah panjang dan menarik. Awal mulanya, wilayah ini merupakan bagian dari Desa Blimbing yang didiami oleh masyarakat agraris. Seiring perkembangan zaman dan pertambahan penduduk, Desa Blimbing dimekarkan menjadi kelurahan Blimbing pada tahun 1980.
+
+                    Pada tahun 1990, atas prakarsa para tokoh masyarakat, RW 1 Jalan Kesatrian dibentuk sebagai bagian dari upaya penataan wilayah dan pemberdayaan masyarakat. Pembentukan RW ini didorong oleh beberapa faktor, antara lain:
+                    
+                    Pertambahan penduduk: Meningkatnya jumlah penduduk di wilayah tersebut, yang membutuhkan koordinasi dan pengelolaan yang lebih baik.
+                    Kebutuhan akan infrastruktur dan layanan: Masyarakat membutuhkan akses yang lebih mudah terhadap infrastruktur seperti jalan, air bersih, dan listrik, serta layanan publik seperti pendidikan dan kesehatan.
+                    Keinginan untuk meningkatkan kesejahteraan: Masyarakat ingin meningkatkan taraf hidup dan kesejahteraan melalui berbagai program dan kegiatan yang diselenggarakan oleh RW.</p>
+                <br>
                 <h1>RW 01 KELURAHAN KESATRIAN</h1>
                 <p>Visi: <br>Terwujudnya RW Yang Maju, Mandiri, Sejahtera, Dan Berkelanjutan, Dengan Mengedepankan Semangat Gotong Royong, Kebersamaan, Dan Kepedulian Antar Warga.</p>
                 <p>Misi:</p>
