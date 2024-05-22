@@ -76,7 +76,6 @@
                 <div class="form-group">
                     <label for="subject">Subject:</label>
                     <select id="subject" name="subject" required>
-                        <option value="Pertanyaan">Subject</option>
                         <option value="Komentar">Kritik&saran</option>
                         <option value="Komentar">Laporan</option>
 
