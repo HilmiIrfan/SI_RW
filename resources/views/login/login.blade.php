@@ -67,6 +67,11 @@
 <!-- /.col -->
 
       </form>
+       <!-- Tombol Kembali ke Dashboard -->
+       <div class="text-center">
+        <a href="{{ url('/welcome') }}" class="btn btn-secondary"><b>Kembali ke Dashboard</b></a>
+      </div>
+      <br><br>
         <div class="rectangle" style="width: 360px; height: 35px; background-color: #A79898; border: -5px solid #;
         border-radius: 5px; padding: 0px; margin:-20px;">
         <a href="#" class="btn btn-block btn-linear">
