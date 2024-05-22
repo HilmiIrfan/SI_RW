@@ -38,7 +38,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="bansosfilt" class="nav-link">
+          <a href="/SI_RW/public/bansosfilt" class="nav-link">
             <i class="nav-icon fas fa-columns"></i>
             <p>
               Filter Bansos

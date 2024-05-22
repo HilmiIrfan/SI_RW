@@ -2,17 +2,14 @@
 
 @section('content')
     <div class="container">
-        <h2>Data Bansos</h2>
+        <h2>Data Bansos Diterima</h2>
         @if(session('success'))
             <div class="alert alert-success">
                 {{ session('success') }}
             </div>
         @endif
-        <div class="mb-3">
-            <a href="{{ route('bansosfilt') }}" class="btn btn-primary">Tampilkan Data yang Diterima</a>
-        </div>
         <div class="table-responsive">
-            <table class="table">
+            <table class="table table-bordered table-striped">
                 <thead>
                     <tr>
                         <th>Nomor</th>
@@ -27,7 +24,7 @@
                         <th>Status</th>
                         <th>Pekerjaan</th>
                         <th>Pendidikan</th>
-                        <th>Action</th>
+                        <th>Action</th> <!-- Tambah kolom untuk action delete -->
                     </tr>
                 </thead>
                 <tbody>
@@ -46,14 +43,12 @@
                         <td>{{ $data->pekerjaan }}</td>
                         <td>{{ $data->pendidikan }}</td>
                         <td>
-                            @if($data->status !== 'Diterima')
-                                <form action="{{ route('bansos.terima', $data->id) }}" method="post">
-                                    @csrf
-                                    <button type="submit" class="btn btn-success">Terima</button>
-                                </form>
-                            @else
-                                <button type="button" class="btn btn-secondary" disabled>Sudah Diterima</button>
-                            @endif
+                            <!-- Tombol Delete dengan konfirmasi -->
+                            <form action="{{ route('bansos.undo_terima', $data->id) }}" method="post">
+                                @csrf
+                                @method('PUT')
+                                <button type="submit" onclick="return confirm('Anda yakin ingin menghapus status Diterima dari data ini?')" class="btn btn-warning">Batalkan Terima</button>
+                            </form>
                         </td>
                     </tr>
                     @endforeach
@@ -63,15 +58,11 @@
     </div>
 @endsection
 
+@section('styles')
 <style>
     .container {
-        max-width: 1000px;
+        max-width: 900px;
         margin: 0 auto;
-        padding: 20px;
-        background-color: #fff;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        overflow-x: auto; /* Menambahkan pengguliran horizontal */
     }
 
     h2 {
@@ -80,58 +71,42 @@
     }
 
     .alert {
-        padding: 10px;
         margin-bottom: 20px;
-        border: 1px solid transparent;
-        border-radius: 4px;
-        color: #155724;
-        background-color: #d4edda;
-        border-color: #c3e6cb;
-        text-align: center;
-    }
-
-    .table-responsive {
-        overflow-x: auto;
     }
 
     .table {
         width: 100%;
         border-collapse: collapse;
-        margin-bottom: 20px;
     }
 
     .table th,
     .table td {
-        border: 1px solid #ddd;
-        padding: 8px;
-        text-align: left;
+        padding: 10px;
+        text-align: center;
+        vertical-align: middle;
     }
 
     .table th {
-        background-color: #f2f2f2;
-        text-align: center;
-    }
-
-    .table tbody tr:nth-child(even) {
-        background-color: #f9f9f9;
-    }
-
-    .table tbody tr:hover {
-        background-color: #f1f1f1;
-    }
-
-    .btn {
-        padding: 5px 10px;
-        background-color: #28a745;
+        background-color: #007bff;
         color: #fff;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        text-decoration: none;
-        display: inline-block;
+        font-weight: bold;
     }
 
-    .btn:hover {
-        background-color: #218838;
+    .table-bordered th,
+    .table-bordered td {
+        border: 1px solid #dee2e6;
+    }
+
+    .table-striped tbody tr:nth-of-type(odd) {
+        background-color: #f2f2f2;
+    }
+
+    .table-striped tbody tr:nth-of-type(even) {
+        background-color: #fff;
+    }
+
+    .table-striped tbody tr:hover {
+        background-color: #cce5ff;
     }
 </style>
+@endsection

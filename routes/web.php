@@ -43,9 +43,13 @@ Route::get('/laporan', function () {
 Route::get('/bansos', function () {
     return view('bansos.bansos');
 });
-Route::get('/bansosfilt', [BansosController::class, 'index']);
+
+Route::get('/bansosfilt', [BansosController::class, 'index'])->name('bansos.filter');
 Route::post('/bansos/terima/{id}', [BansosController::class, 'terima'])->name('bansos.terima');
 Route::post('/bansos', [BansosController::class, 'store'])->name('bansos.store');
+Route::get('/bansos/filtered', [BansosController::class, 'filtered'])->name('bansosfilt');
+Route::put('/bansos/undo_terima/{id}', [BansosController::class, 'undoTerima'])->name('bansos.undo_terima');
+
 
 Route::get('/galerishow', function () {
     return view('galeri.galeri');

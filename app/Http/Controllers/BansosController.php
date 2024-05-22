@@ -19,16 +19,25 @@ class BansosController extends Controller
 
     public function terima($id)
     {
-        // Mencari data bansos berdasarkan ID
         $bansos = Bansos::findOrFail($id);
+        $bansos->status = 'Diterima';
+        $bansos->save();
 
-        // Menyimpan data bansos yang diterima ke tabel bansos_terima
-        BansosTerima::create([
-            'bansos_id' => $bansos->id,
-        ]);
+        return redirect()->route('bansos.filter')->with('success', 'Bansos berhasil diterima.');
+    }
+    public function undoTerima($id)
+{
+    $bansos = Bansos::findOrFail($id);
+    $bansos->status = 'Belum Diterima'; // Atur status kembali ke "Belum Diterima"
+    $bansos->save();
 
-        // Redirect kembali ke halaman daftar bansos dengan pesan sukses
-        return redirect()->route('bansosfilt')->with('success', 'Data Bansos diterima.');
+    return redirect()->back()->with('success', 'Status Diterima berhasil dihapus.');
+}
+
+    public function filtered()
+    {
+        $bansos = Bansos::where('status', 'Diterima')->get();
+        return view('bansos.filtered', compact('bansos'));
     }
     public function store(Request $request)
     {
@@ -53,5 +62,10 @@ class BansosController extends Controller
 
         // Redirect dan memberikan pesan sukses
         return redirect()->back()->with('success', 'Data Bansos berhasil disimpan.');
+    }
+    public function showfilter()
+    {
+        $bansos = BansosTerima::all();
+        return view('bansos.filtered');
     }
 }
