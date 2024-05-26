@@ -3,108 +3,72 @@
 @section('content')
 
 <style>
-  /* Hide image container */
-  .card-header .image-container {
-    display: none;
-  }
-
-  /* Adjust spacing for text container */
-  .card-body .text-container {
-    flex: 1;
-  }
-
-  /* Grid layout for agenda and berita sections */
-  .card-body .container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
+  /* Style for the container holding agenda and berita sections */
+  .content-container {
+    display: flex;
+    justify-content: space-between;
     gap: 20px;
   }
 
-  /* Style for individual berita section */
-  .card-body .text-container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+  /* Style for individual sections */
+  .content-section {
+    flex: 1;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
   }
 
-  .card-body .text-container img {
-    width: 100%;
-    height: auto;
-    margin-bottom: 10px;
+  .content-section h2 {
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
   }
 
-  .card-body .text-container table {
-    width: 100%;
+  .content-section ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .content-section li {
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .content-section li:last-child {
+    border-bottom: none;
   }
 </style>
 
 
-<div class="card">
-  <div class="card-body">
-      <div class="container">
-          <div class="text-container">
-            <h1>BERITA RW 01 KELURAHAN KESATRIAN</h1>
-            <table class="table table-bordered table-stiped table-hover table-sm" id="table_agenda">
-              <thead>
-                <tr>
-                  <th>Berita 1</th>
-                  <th>Tanggal</th>
-                  <th>Deskripsi</th>
-                </tr>
-              </thead>
-              <thead>
-                <tr>
-                  <th>Berita 2</th>
-                  <th>Tanggal</th>
-                  <th>Deskripsi</th>
-                </tr>
-              </thead>
-              <thead>
-                <tr>
-                  <th>Berita 3</th>
-                  <th>Tanggal</th>
-                  <th>Deskripsi</th>
-                </tr>
-              </thead>
-              <thead>
-                <tr>
-                  <th>Berita 4</th>
-                  <th>Tanggal</th>
-                  <th>Deskripsi</th>
-                </tr>
-              </thead>
-            </table>
-          </div>
-          <div class="text-container">
-            <h1>AGENDA KEGIATAN RW 01 KELURAHAN KESATRIAN</h1>
-            <table class="table table-bordered table-stiped table-hover table-sm" id="table_agenda">
-              <thead>
-                <tr>
-                  <th>Agenda Kegiatan 1</th>
-                  <th>Tanggal</th>
-                </tr>
-              </thead>
-              <thead>
-                <tr>
-                  <th>Agenda Kegiatan 2</th>
-                  <th>Tanggal</th>
-                </tr>
-              </thead>
-              <thead>
-                <tr>
-                  <th>Agenda Kegiatan 3</th>
-                  <th>Tanggal</th>
-                </tr>
-              </thead>
-              <thead>
-                <tr>
-                  <th>Agenda Kegiatan 4</th>
-                  <th>Tanggal</th>
-                </tr>
-              </thead>
-            </table>
-          </div>
-      </div>
+
+<div class="content-container">
+  <div class="content-section">
+    <h2>AGENDA</h2>
+    <ul>
+      <li>Agenda1 - Tanggal1</li>
+      <li>Agenda2 - Tanggal2</li>
+      <li>Agenda3 - Tanggal3</li>
+    </ul>
+  </div>
+  <div class="content-section">
+    <h2>BERITA</h2>
+    <ul>
+      <li>
+        <h3>Judul1</h3>
+        <p>Tanggal1</p>
+        <p>Deskripsi1</p>
+      </li>
+      <li>
+        <h3>Judul2</h3>
+        <p>Tanggal2</p>
+        <p>Deskripsi2</p>
+      </li>
+      <li>
+        <h3>Judul3</h3>
+        <p>Tanggal3</p>
+        <p>Deskripsi3</p>
+      </li>
+    </ul>
   </div>
 </div>
 
