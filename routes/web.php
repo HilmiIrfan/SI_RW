@@ -7,6 +7,7 @@ use App\Http\Controllers\FileUploadController;
 use App\Http\Controllers\IuranController;
 use App\Http\Controllers\LaporanAdminController;
 use App\Http\Controllers\LaporanController;
+use App\Http\Controllers\PendudukController;
 use Illuminate\Support\Facades\Route;
 Use App\Http\Controllers\Warga\GaleriController;
 
@@ -78,3 +79,6 @@ Route::post('/iuran', 'IuranController@store')->name('iuran.store');
 Route::get('/iuran/{id}/edit', 'IuranController@edit')->name('iuran.edit');
 Route::put('/iuran/{id}', 'IuranController@update')->name('iuran.update');
 Route::delete('/iuran/{id}', 'IuranController@destroy')->name('iuran.destroy');
+
+Route::get('/penduduk', [PendudukController::class, 'index'])->name('penduduk.index');
+Route::get('/penduduk/{no_kk}', [PendudukController::class, 'show'])->name('penduduk.show');
