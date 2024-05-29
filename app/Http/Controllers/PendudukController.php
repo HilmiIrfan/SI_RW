@@ -20,15 +20,10 @@ class PendudukController extends Controller
 
         return view('penduduk.index', compact('penduduks', 'filter'));
     }
+    
     public function create()
     {
         return view('penduduk.create');
-    }
-
-    public function show($no_kk)
-    {
-        $penduduks = Penduduk::where('no_kk', $no_kk)->get();
-        return view('penduduk.detail', compact('penduduks'));
     }
 
     public function store(Request $request)
@@ -49,6 +44,14 @@ class PendudukController extends Controller
         // Redirect ke halaman create dengan pesan sukses
         return redirect()->route('penduduk.create')->with('success', 'Data penduduk berhasil ditambahkan.');
     }
+
+    public function show($no_kk)
+    {
+        $penduduks = Penduduk::where('no_kk', $no_kk)->get();
+        return view('penduduk.detail', compact('penduduks'));
+    }
+
+    
     
 
 }
