@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BansosController;
 use App\Http\Controllers\FileUploadController;
+use App\Http\Controllers\IuranController;
 use App\Http\Controllers\LaporanAdminController;
 use App\Http\Controllers\LaporanController;
 use Illuminate\Support\Facades\Route;
@@ -71,7 +72,7 @@ Route::get('/laporanshow', [LaporanAdminController::class,'index']);
 Route::get('/showlap', [LaporanAdminController::class,'show']);
 Route::get('/laporan/create', [LaporanAdminController::class,'create']);
 
-Route::get('/iuran', 'IuranController@index')->name('iuran.index');
+Route::get('/iuran',[IuranController::class,'index']);
 Route::get('/iuran/create', 'IuranController@create')->name('iuran.create');
 Route::post('/iuran', 'IuranController@store')->name('iuran.store');
 Route::get('/iuran/{id}/edit', 'IuranController@edit')->name('iuran.edit');

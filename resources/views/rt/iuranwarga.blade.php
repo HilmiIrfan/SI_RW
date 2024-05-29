@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('rt.template')
 
 @section('content')
 <h1>Iuran Warga</h1>
