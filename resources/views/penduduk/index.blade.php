@@ -103,6 +103,7 @@
             <a href="{{ route('penduduk.index', ['filter' => 'all']) }}" class="btn btn-primary">Tampilkan Semua Penduduk</a>
             <a href="{{ route('penduduk.index', ['filter' => 'no_kk']) }}" class="btn btn-secondary">Tampilkan Berdasarkan No KK</a>
         </div>
+        
         <div class="table-responsive">
             <table class="table">
                 <thead>
