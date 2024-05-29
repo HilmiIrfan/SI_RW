@@ -29,7 +29,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="pengurus" class="nav-link">
+          <a href="/SI_RW/public/iuran" class="nav-link">
             <i class="nav-icon fas fa-users"></i>
             <p>
               Iuran Warga

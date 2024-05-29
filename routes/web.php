@@ -70,3 +70,10 @@ Route::post('logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/laporanshow', [LaporanAdminController::class,'index']);
 Route::get('/showlap', [LaporanAdminController::class,'show']);
 Route::get('/laporan/create', [LaporanAdminController::class,'create']);
+
+Route::get('/iuran', 'IuranController@index')->name('iuran.index');
+Route::get('/iuran/create', 'IuranController@create')->name('iuran.create');
+Route::post('/iuran', 'IuranController@store')->name('iuran.store');
+Route::get('/iuran/{id}/edit', 'IuranController@edit')->name('iuran.edit');
+Route::put('/iuran/{id}', 'IuranController@update')->name('iuran.update');
+Route::delete('/iuran/{id}', 'IuranController@destroy')->name('iuran.destroy');
