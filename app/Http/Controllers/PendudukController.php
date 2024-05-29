@@ -23,7 +23,10 @@ class PendudukController extends Controller
     
     public function create()
     {
-        return view('penduduk.create');
+        // Mendapatkan nomor KK yang sudah ada
+        $existing_no_kk = Penduduk::pluck('no_kk')->unique()->toArray();
+        
+        return view('penduduk.create', compact('existing_no_kk'));
     }
 
     public function store(Request $request)

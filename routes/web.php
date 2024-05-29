@@ -81,6 +81,6 @@ Route::put('/iuran/{id}', 'IuranController@update')->name('iuran.update');
 Route::delete('/iuran/{id}', 'IuranController@destroy')->name('iuran.destroy');
 
 Route::get('/penduduk', [PendudukController::class, 'index'])->name('penduduk.index');
-Route::get('/penduduk/{no_kk}', [PendudukController::class, 'show'])->name('penduduk.show');
 Route::get('/penduduk/create', [PendudukController::class, 'create'])->name('penduduk.create');
 Route::post('/penduduk', [PendudukController::class, 'store'])->name('penduduk.store');
+Route::get('/penduduk/{no_kk}', [PendudukController::class, 'show'])->name('penduduk.show');
