@@ -37,10 +37,15 @@ Route::get('/login', function () {
 Route::get('/agenda', function () {
     return view('agenda.agenda');
 });
+Route::get('/agendaadmin', function () {
+    return view('agenda.agendaadmin');
+});
+
 
 Route::get('/laporan', function () {
     return view('laporan.laporan');
 });
+Route::get('/laporanshow', [LaporanController::class, 'laporanshow']);
 
 Route::get('/bansos', function () {
     return view('bansos.bansos');
@@ -60,6 +65,9 @@ Route::get('/galeri', [GaleriController::class, 'index'])->name('galeri.index');
 
 Route::get('/pengurus', function () {
     return view('pengurus.pengurus');
+});
+Route::get('/pengurusadmin', function () {
+    return view('pengurus.pengurusadmin');
 });
 
 Route::get('/welcome', function () {
