@@ -28,7 +28,7 @@ Route::get('/', function () {
 Route::get('/admin', [AdminController::class, 'index'])->name('admin.dashboard');
 Route::get('/rt', [AdminController::class, 'rt'])->name('rt.dashboard');
 Route::get('/rw', [AdminController::class, 'rw'])->name('rw.dashboard');
-
+Route::get('/warga', [AdminController::class, 'warga'])->name('warga.dashboard');
 
 Route::get('/login', function () {
     return view('login.login');
@@ -55,6 +55,7 @@ Route::get('/bansosfilt', [BansosController::class, 'index'])->name('bansos.filt
 Route::post('/bansos/terima/{id}', [BansosController::class, 'terima'])->name('bansos.terima');
 Route::post('/bansos', [BansosController::class, 'store'])->name('bansos.store');
 Route::get('/bansos/filtered', [BansosController::class, 'filtered'])->name('bansosfilt');
+Route::get('/bansos/filteredAdmin', [BansosController::class, 'filteredAdmin'])->name('bansosfiltAdmin');
 Route::put('/bansos/undo_terima/{id}', [BansosController::class, 'undoTerima'])->name('bansos.undo_terima');
 
 
@@ -82,6 +83,7 @@ Route::get('/showlap', [LaporanAdminController::class,'show']);
 Route::get('/laporan/create', [LaporanAdminController::class,'create']);
 
 Route::get('/iuran',[IuranController::class,'index']);
+Route::get('/iuranAdmin',[IuranController::class,'indexAdmin']);
 Route::get('/iuran/create', 'IuranController@create')->name('iuran.create');
 Route::post('/iuran', 'IuranController@store')->name('iuran.store');
 Route::get('/iuran/{id}/edit', 'IuranController@edit')->name('iuran.edit');

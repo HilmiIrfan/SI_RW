@@ -18,4 +18,8 @@ class AdminController extends Controller
     {
         return view('dashrt'); // Pastikan Anda memiliki view yang sesuai
     }
+    public function warga()
+    {
+        return view('dashwarga'); // Pastikan Anda memiliki view yang sesuai
+    }
 }

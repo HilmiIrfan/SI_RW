@@ -15,36 +15,36 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th>Nomor</th>
-                        <th>Uraian</th>
-                        <th>Jenis</th>
-                        <th>Tahun</th>
-                        <th>Diselenggarakan oleh</th>
-                        <th>Disalurkan melalui</th>
-                        <th>Kategori Penerima</th>
-                        <th>Alamat Rumah</th>
-                        <th>Nama Penerima</th>
-                        <th>Status</th>
+                        <th>Nomor KK</th>
+                        <th>Jumlah Tanggungan</th>
+                        <th>Gaji</th>
                         <th>Pekerjaan</th>
+                        <th>Alamat</th>
                         <th>Pendidikan</th>
+                        <th>Surat Tambahan</th>
+                        <th>Status</th>
+                        <th>Kepala Keluarga</th> <!-- New column -->
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach($bansos as $data)
                     <tr>
-                        <td>{{ $data->nomor }}</td>
-                        <td>{{ $data->uraian }}</td>
-                        <td>{{ $data->jenis }}</td>
-                        <td>{{ $data->tahun }}</td>
-                        <td>{{ $data->diselenggarakan }}</td>
-                        <td>{{ $data->disalurkan }}</td>
-                        <td>{{ $data->kategori }}</td>
-                        <td>{{ $data->alamat }}</td>
-                        <td>{{ $data->nama }}</td>
-                        <td>{{ $data->status }}</td>
+                        <td>{{ $data->no_kk }}</td>
+                        <td>{{ $data->jumlah_tanggungan }}</td>
+                        <td>{{ $data->gaji }}</td>
                         <td>{{ $data->pekerjaan }}</td>
+                        <td>{{ $data->alamat }}</td>
                         <td>{{ $data->pendidikan }}</td>
+                        <td>{{ $data->surat_tambahan }}</td>
+                        <td>{{ $data->status }}</td>
+                        <td>
+                            @foreach($bansoss as $datas)
+                                @if($datas->no_kk == $data->no_kk && $datas->status == "Kepala Keluarga")
+                                    {{ $datas->nama }}
+                                @endif
+                            @endforeach
+                        </td>
                         <td>
                             @if($data->status !== 'Diterima')
                                 <form action="{{ route('bansos.terima', $data->id) }}" method="post">

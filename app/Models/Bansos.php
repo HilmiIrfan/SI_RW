@@ -10,17 +10,14 @@ class Bansos extends Model
     use HasFactory;
 
     protected $fillable = [
-        'nomor',
-        'uraian',
-        'jenis',
-        'tahun',
-        'diselenggarakan',
-        'disalurkan',
-        'kategori',
-        'alamat',
-        'nama',
-        'status',
+        'id',
+        'no_kk',
+        'jumlah_tanggungan',
+        'gaji',
         'pekerjaan',
+        'alamat',
         'pendidikan',
+        'surat_tambahan',
+        'status',
     ];
 }

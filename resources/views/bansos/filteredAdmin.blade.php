@@ -1,4 +1,4 @@
-@extends('rt.template')
+@extends('Admin.template')
 
 @section('content')
     <div class="container">
@@ -8,9 +8,6 @@
                 {{ session('success') }}
             </div>
         @endif
-        <div class="mb-3">
-            <a href="{{ route('bansos.filter') }}" class="btn btn-primary">Kembali</a>
-        </div>
         <div class="table-responsive">
             <table class="table">
                 <thead>

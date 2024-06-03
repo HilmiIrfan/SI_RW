@@ -13,6 +13,11 @@ class GaleriController extends Controller
         $galeri = Galeri::all();
         return view('galeri.index', compact('galeri'));
     }
+    public function indexAdmin()
+    {
+        $galeri = Galeri::all();
+        return view('galeriAdmin.index', compact('galeri'));
+    }
 
     public function create()
     {

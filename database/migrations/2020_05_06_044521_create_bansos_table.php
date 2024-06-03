@@ -13,19 +13,16 @@ return new class extends Migration
     {
         Schema::create('bansos', function (Blueprint $table) {
             $table->id();
-            $table->string('nomor');
-            $table->string('uraian');
-            $table->string('jenis');
-            $table->string('tahun');
-            $table->string('diselenggarakan');
-            $table->string('disalurkan');
-            $table->string('kategori');
-            $table->string('alamat');
-            $table->string('nama');
-            $table->string('status');
+            $table->foreignId('no_kk'); // Assuming 'penduduk' is the name of the table with 'no_kk'
+            $table->integer('jumlah_tanggungan');
+            $table->decimal('gaji');
             $table->string('pekerjaan');
+            $table->string('alamat');
             $table->string('pendidikan');
+            $table->text('surat_tambahan')->nullable();
+            $table->string('status');
             $table->timestamps();
+            $table->foreign('no_kk')->references('no_kk')->on('penduduk')->onDelete('cascade');
         });
     }
 

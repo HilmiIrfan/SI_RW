@@ -19,7 +19,11 @@ class IuranController extends Controller
         $iuran = Iuran::with('user')->get();
         return view('rt.iuranwarga', compact('iuran'));
     }
-
+    public function indexAdmin()
+    {
+        $iuran = Iuran::with('user')->get();
+        return view('rt.iuranwargaAdmin', compact('iuran'));
+    }
     /**
      * Menampilkan formulir untuk menambahkan data iuran baru.
      *

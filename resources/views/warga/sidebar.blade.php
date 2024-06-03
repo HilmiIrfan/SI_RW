@@ -2,7 +2,7 @@
   
 
     <!-- SidebarSearch Form -->
-    <div class="form-inline">
+    <div class="form-inline" >
       <div class="input-group" data-widget="sidebar-search">
         <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
         <div class="input-group-append">
@@ -20,7 +20,7 @@
              with font-awesome or any other icon font library -->
        
         <li class="nav-item">
-          <a href="/SI_RW/public/admin" class="nav-link">
+          <a href="/SI_RW/public" class="nav-link">
             <i class="nav-icon fas fa-tachometer-alt"></i>
             <p>
               Dashboard
@@ -29,7 +29,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="laporanshow" class="nav-link">
+          <a href="laporan" class="nav-link" >
             <i class="nav-icon far fa-envelope"></i>
             <p>
               Laporan
@@ -38,7 +38,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="agendaadmin" class="nav-link">
+          <a href="agenda" class="nav-link">
             <i class="nav-icon fas fa-calendar-alt"></i>
             <p>
               Agenda
@@ -47,7 +47,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="{{ route('galeri.index') }}" class="nav-link">
+          <a href="galerishow" class="nav-link">
             <i class="nav-icon fas fa-image"></i>
             <p>
               Galeri
@@ -56,39 +56,20 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="pengurusadmin" class="nav-link">
+          <a href="pengurus" class="nav-link">
             <i class="nav-icon fas fa-users"></i>
             <p>
-              Pengurus
+              Kontak Pengurus
               <span class="right badge badge-danger"></span>
             </p>
           </a>
         </li>
         <li class="nav-item">
-          <a href="/SI_RW/public/iuranAdmin" class="nav-link">
-            <i class="nav-icon fas fa-dollar-sign"></i>
-            <p>
-              Iuran Warga
-              <span class="right badge badge-danger"></span>
-            </p>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="/SI_RW/public/penduduk" class="nav-link">
-            <i class="nav-icon fas fa-user"></i>
-            <p>
-              Kelola Penduduk
-              <span class="right badge badge-danger"></span>
-            </p>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="/SI_RW/public/bansos/filteredAdmin" class="nav-link">
+          <a href="bansos" class="nav-link">
             <i class="nav-icon fas fa-columns"></i>
             <p>
-              Filter Bansos
+              Pengajuan Bansos
               <span class="right badge badge-danger"></span>
             </p>
           </a>
-        </li>
-        
+

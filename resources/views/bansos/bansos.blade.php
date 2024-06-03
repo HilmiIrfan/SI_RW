@@ -32,7 +32,7 @@
             font-weight: bold;
         }
 
-        input[type="text"] {
+        input[type="text"], select {
             width: calc(100% - 20px);
             padding: 8px;
             border: 1px solid #ccc;
@@ -84,55 +84,68 @@
                 {{ session('success') }}
             </div>
         @endif
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <form action="{{ route('bansos.store') }}" method="post">
             @csrf
             <div class="form-group">
-                <label for="nomor">Nomor:</label>
-                <input type="text" id="nomor" name="nomor" required>
+                <label for="no_kk">Nomor KK:</label>
+                <input type="text" id="no_kk" name="no_kk" value="{{ old('no_kk') }}" required>
             </div>
             <div class="form-group">
-                <label for="uraian">Uraian Bansos:</label>
-                <input type="text" id="uraian" name="uraian" required>
+                <label for="jumlah_tanggungan">Jumlah Tanggungan:</label>
+                <select id="jumlah_tanggungan" name="jumlah_tanggungan" required>
+                    <option value="0" {{ old('jumlah_tanggungan') == '0' ? 'selected' : '' }}>0</option>
+                    <option value="1" {{ old('jumlah_tanggungan') == '1' ? 'selected' : '' }}>1</option>
+                    <option value="2" {{ old('jumlah_tanggungan') == '2' ? 'selected' : '' }}>2</option>
+                    <option value="3" {{ old('jumlah_tanggungan') == '3' ? 'selected' : '' }}>3</option>
+                    <option value=">3" {{ old('jumlah_tanggungan') == '>3' ? 'selected' : '' }}>&gt;3</option>
+                </select>
             </div>
             <div class="form-group">
-                <label for="jenis">Jenis Bantuan:</label>
-                <input type="text" id="jenis" name="jenis" required>
-            </div>
-            <div class="form-group">
-                <label for="tahun">Tahun:</label>
-                <input type="text" id="tahun" name="tahun" required>
-            </div>
-            <div class="form-group">
-                <label for="diselenggarakan">Diselenggarakan oleh:</label>
-                <input type="text" id="diselenggarakan" name="diselenggarakan" required>
-            </div>
-            <div class="form-group">
-                <label for="disalurkan">Disalurkan melalui:</label>
-                <input type="text" id="disalurkan" name="disalurkan" required>
-            </div>
-            <div class="form-group">
-                <label for="kategori">Kategori Penerima:</label>
-                <input type="text" id="kategori" name="kategori" required>
-            </div>
-            <div class="form-group">
-                <label for="alamat">Alamat Rumah:</label>
-                <input type="text" id="alamat" name="alamat" required>
-            </div>
-            <div class="form-group">
-                <label for="nama">Nama Penerima:</label>
-                <input type="text" id="nama" name="nama" required>
-            </div>
-            <div class="form-group">
-                <label for="status">Status:</label>
-                <input type="text" id="status" name="status" required>
+                <label for="gaji">Gaji:</label>
+                <select id="gaji" name="gaji" required>
+                    <option value="<500000" {{ old('gaji') == '<500000' ? 'selected' : '' }}>&lt;500000</option>
+                    <option value="500000-1000000" {{ old('gaji') == '500000-1000000' ? 'selected' : '' }}>500000-1000000</option>
+                    <option value="1000000-3000000" {{ old('gaji') == '1000000-3000000' ? 'selected' : '' }}>1000000-3000000</option>
+                    <option value=">3000000" {{ old('gaji') == '>3000000' ? 'selected' : '' }}>&gt;3000000</option>
+                </select>
             </div>
             <div class="form-group">
                 <label for="pekerjaan">Pekerjaan:</label>
-                <input type="text" id="pekerjaan" name="pekerjaan" required>
+                <select id="pekerjaan" name="pekerjaan" required>
+                    <option value="PNS" {{ old('pekerjaan') == 'PNS' ? 'selected' : '' }}>PNS</option>
+                    <option value="Honor" {{ old('pekerjaan') == 'Honor' ? 'selected' : '' }}>Honor</option>
+                    <option value="Petani/Nelayan" {{ old('pekerjaan') == 'Petani/Nelayan' ? 'selected' : '' }}>Petani/Nelayan</option>
+                    <option value="Pekerja Bebas" {{ old('pekerjaan') == 'Pekerja Bebas' ? 'selected' : '' }}>Pekerja Bebas</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="alamat">Alamat Rumah:</label>
+                <input type="text" id="alamat" name="alamat" value="{{ old('alamat') }}" required>
             </div>
             <div class="form-group">
                 <label for="pendidikan">Pendidikan:</label>
-                <input type="text" id="pendidikan" name="pendidikan" required>
+                <select id="pendidikan" name="pendidikan" required>
+                    <option value="SD atau dibawahnya" {{ old('pendidikan') == 'SD atau dibawahnya' ? 'selected' : '' }}>SD atau dibawahnya</option>
+                    <option value="SMP" {{ old('pendidikan') == 'SMP' ? 'selected' : '' }}>SMP</option>
+                    <option value="SMA" {{ old('pendidikan') == 'SMA' ? 'selected' : '' }}>SMA</option>
+                    <option value="Sarjana" {{ old('pendidikan') == 'Sarjana' ? 'selected' : '' }}>Sarjana</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="surat_tambahan">Surat Tambahan:</label>
+                <select id="surat_tambahan" name="surat_tambahan" required>
+                    <option value="PUNYA" {{ old('surat_tambahan') == 'PUNYA' ? 'selected' : '' }}>PUNYA</option>
+                    <option value="TIDAK" {{ old('surat_tambahan') == 'TIDAK' ? 'selected' : '' }}>TIDAK</option>
+                </select>
             </div>
             <button type="submit">Simpan</button>
         </form>
