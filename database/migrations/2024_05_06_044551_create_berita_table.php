@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('berita', function (Blueprint $table) {
             $table->id();
+            $table->date('tanggal_berita');
+            $table->string('nama_berita');
+            $table->text('detail_berita');
             $table->timestamps();
         });
     }

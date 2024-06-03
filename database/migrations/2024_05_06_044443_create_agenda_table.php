@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('agenda', function (Blueprint $table) {
             $table->id();
+            $table->date('tanggal_agenda');
+            $table->string('nama_agenda');
+            $table->text('detail_agenda');
             $table->timestamps();
         });
     }
