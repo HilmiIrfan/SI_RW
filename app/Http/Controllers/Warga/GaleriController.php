@@ -12,40 +12,49 @@ class GaleriController extends Controller
     public function index()
     {
         $galeris = Galeri::all();
-        return view('galeri/index', compact('galeris'));
+        return view('galeri.index', compact('galeris'));
     }
 
     // Menampilkan form untuk menambahkan item galeri baru
     public function create()
     {
-        return view('galeri/create');
+        return view('galeri.create');
     }
 
     // Menyimpan item galeri baru ke database
+    // Menyimpan item galeri baru ke database
     public function store(Request $request)
     {
-        // Validasi data input
-        $request->validate([
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Atur sesuai kebutuhan
-        ]);
+    // Validasi data input
+    $request->validate([
+        'nama_foto' => 'required', // Pastikan kolom 'nama_foto' tidak kosong
+        'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+    ]);
 
-        // Upload gambar
-        $imageName = time().'.'.$request->image->extension();  
-        $request->image->move(public_path('images'), $imageName);
+    // Upload gambar
+    $imageName = time().'.'.$request->image->extension();  
+    $request->image->move(public_path('images'), $imageName);
 
-        // Simpan data ke database
+    // Periksa apakah 'nama_foto' tersedia sebelum menyimpan ke dalam database
+    if ($request->has('nama_foto')) {
+        // Jika 'nama_foto' tersedia dalam request, simpan ke dalam database
         Galeri::create([
-            'image_path' => $imageName,
+            'nama_foto' => $request->nama_foto,
+            'detail_foto' => $request->detail_foto,
+            'foto' => $imageName,
         ]);
+    } else {
+        // Tampilkan pesan kesalahan atau tindakan lain sesuai dengan kebutuhan aplikasi Anda
+    }
 
-        return redirect()->route('galeri/index')->with('success', 'Item galeri berhasil ditambahkan.');
+    return redirect()->route('galeri.index')->with('success', 'Item galeri berhasil ditambahkan.');
     }
 
     // Menampilkan form untuk mengedit item galeri
     public function edit($id)
     {
         $galeri = Galeri::findOrFail($id);
-        return view('galeri/edit', compact('galeri'));
+        return view('galeri.edit', compact('galeri'));
     }
 
     // Memperbarui item galeri di database
@@ -63,12 +72,15 @@ class GaleriController extends Controller
         if ($request->hasFile('image')) {
             $imageName = time().'.'.$request->image->extension();  
             $request->image->move(public_path('images'), $imageName);
-            $galeri->image_path = $imageName;
+            $galeri->foto = $imageName; // Sesuaikan dengan nama kolom yang sesuai
         }
 
+        // Update data galeri
+        $galeri->nama_foto = $request->nama_foto;
+        $galeri->detail_foto = $request->detail_foto;
         $galeri->save();
 
-        return redirect()->route('galeri/index')->with('success', 'Item galeri berhasil diperbarui.');
+        return redirect()->route('galeri.index')->with('success', 'Item galeri berhasil diperbarui.');
     }
 
     // Menghapus item galeri dari database
@@ -76,6 +88,6 @@ class GaleriController extends Controller
     {
         $galeri = Galeri::findOrFail($id);
         $galeri->delete();
-        return redirect()->route('galeri/index')->with('success', 'Item galeri berhasil dihapus.');
+        return redirect()->route('galeri.index')->with('success', 'Item galeri berhasil dihapus.');
     }
 }

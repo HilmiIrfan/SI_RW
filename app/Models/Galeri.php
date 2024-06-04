@@ -7,15 +7,28 @@ use Illuminate\Database\Eloquent\Model;
 
 class Galeri extends Model
 {
-    use HasFactory;
-
+    /**
+     * The table associated with the model.
+     *
+     * @var string
+     */
     protected $table = 'galeri';
 
-    protected $primaryKey = 'id_galeri';
-
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
     protected $fillable = [
-        'nama_foto',
-        'detail_foto',
-        'foto',
+        'nama_foto', 'detail_foto', 'foto'
     ];
+
+    /**
+     * Indicates if the model should be timestamped.
+     *
+     * @var bool
+     */
+    public $timestamps = false;
+
+    // Additional model methods or relationships can be defined here
 }
