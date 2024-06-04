@@ -1,4 +1,4 @@
-@extends('layout.template')
+@extends('warga.template')
 
 @section('content')
 

@@ -36,6 +36,8 @@ Route::get('/login', function () {
 
 Route::get('/agenda', function () {
     return view('agenda.agenda');
+});Route::get('/agendanone', function () {
+    return view('agenda.agendanone');
 });
 Route::get('/agendaadmin', function () {
     return view('agenda.agendaadmin');
@@ -61,6 +63,11 @@ Route::put('/bansos/undo_terima/{id}', [BansosController::class, 'undoTerima'])-
 
 Route::get('/galerishow', function () {
     return view('galeri.galeri');
+});Route::get('/galerishownone', function () {
+    return view('galeri.galerinone');
+});
+Route::get('/galerishowadmin', function () {
+    return view('galeri.galeriadmin');
 });
 Route::get('/galeri', [GaleriController::class, 'index'])->name('galeri.index');
 Route::get('/galeri/create', [GaleriController::class, 'create'])->name('galeri.create');
@@ -73,7 +80,9 @@ Route::get('/pengurus', function () {
 Route::get('/pengurusadmin', function () {
     return view('pengurus.pengurusadmin');
 });
-
+Route::get('/pengurusnone', function () {
+    return view('pengurus.pengurusnone');
+});
 Route::get('/welcome', function () {
     return view('/welcome');
 })->name('welcome');
@@ -81,9 +90,8 @@ Route::get('/welcome', function () {
 Route::post('login', [AuthController::class, 'login'])->name('login');
 Route::post('logout', [AuthController::class, 'logout'])->name('logout');
 
-Route::get('/laporanshow', [LaporanAdminController::class,'index']);
-Route::get('/showlap', [LaporanAdminController::class,'show']);
-Route::get('/laporan/create', [LaporanAdminController::class,'create']);
+Route::get('/laporanshow', [LaporanController::class,'index']);
+
 
 Route::get('/iuran', [IuranController::class, 'index'])->name('iuran.index');
 Route::get('/iuranAdmin', [IuranController::class, 'indexAdmin'])->name('iuran.indexAdmin');

@@ -20,7 +20,7 @@
              with font-awesome or any other icon font library -->
        
         <li class="nav-item">
-          <a href="/SI_RW/public" class="nav-link">
+          <a href="/SI_RW/public/" class="nav-link">
             <i class="nav-icon fas fa-tachometer-alt"></i>
             <p>
               Dashboard
@@ -29,16 +29,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="laporan" class="nav-link" >
-            <i class="nav-icon far fa-envelope"></i>
-            <p>
-              Laporan
-              <span class="right badge badge-danger"></span>
-            </p>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="agenda" class="nav-link">
+          <a href="agendanone" class="nav-link">
             <i class="nav-icon fas fa-calendar-alt"></i>
             <p>
               Agenda
@@ -47,7 +38,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="galerishow" class="nav-link">
+          <a href="galerishownone" class="nav-link">
             <i class="nav-icon fas fa-image"></i>
             <p>
               Galeri
@@ -56,7 +47,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="pengurus" class="nav-link">
+          <a href="pengurusnone" class="nav-link">
             <i class="nav-icon fas fa-users"></i>
             <p>
               Kontak Pengurus

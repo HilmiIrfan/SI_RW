@@ -1,4 +1,4 @@
-@extends('layout.template')
+@extends('warga.template')
 
 @section('content')
 
@@ -45,9 +45,7 @@
             padding: 5px;
             border: 1px solid #ccc;
             border-radius: 5px;
-             
         }
-        
 
         button {
             width: 100%;
@@ -68,7 +66,8 @@
     <body>
         <div class="container">
             <h1>LAPORAN</h1>
-            <form action="#" method="post">
+            <form action="{{ route('laporan.store') }}" method="post">
+                @csrf
                 <div class="form-group">
                     <label for="nama">Nama:</label>
                     <input type="text" id="nama" placeholder="Masukkan Nama" name="nama" required>
@@ -76,9 +75,8 @@
                 <div class="form-group">
                     <label for="subject">Subject:</label>
                     <select id="subject" name="subject" required>
-                        <option value="Komentar">Kritik&saran</option>
-                        <option value="Komentar">Laporan</option>
-
+                        <option value="kritin/saran">Kritik & Saran</option>
+                        <option value="pesan">Laporan</option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -97,7 +95,6 @@
                         <option value="RT07">RT07</option>
                         <option value="RT08">RT08</option>
                         <option value="RT09">RT09</option>
-
                     </select>
                 </div>
                 <div class="form-group">
@@ -108,8 +105,4 @@
             </form>
         </div>
     </body>
-
-
-    </html>
-
-    @endsection
+@endsection
