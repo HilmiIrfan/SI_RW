@@ -19,11 +19,13 @@ class IuranController extends Controller
         $iuran = Iuran::with('user')->get();
         return view('rt.iuranwarga', compact('iuran'));
     }
+
     public function indexAdmin()
     {
         $iuran = Iuran::with('user')->get();
         return view('rt.iuranwargaAdmin', compact('iuran'));
     }
+
     /**
      * Menampilkan formulir untuk menambahkan data iuran baru.
      *
@@ -31,8 +33,8 @@ class IuranController extends Controller
      */
     public function create()
     {
-        $user = User::all();
-        return view('rt.iuranwarga_create', compact('warga'));
+        $users = User::all();
+        return view('rt.iuranwarga_create', compact('users'));
     }
 
     /**
@@ -45,7 +47,7 @@ class IuranController extends Controller
     {
         $validatedData = $this->validateRequest($request);
 
-        $iuran = Iuran::create($validatedData);
+        Iuran::create($validatedData);
 
         return redirect()->route('iuran.index')->with('success', 'Data iuran baru berhasil ditambahkan.');
     }
@@ -58,9 +60,9 @@ class IuranController extends Controller
      */
     public function edit($id)
     {
-        $iuran = Iuran::with('warga')->findOrFail($id);
-        $user = User::all();
-        return view('rt.iuranwarga_edit', compact('iuran', 'warga'));
+        $iuran = Iuran::with('user')->findOrFail($id);
+        $users = User::all();
+        return view('rt/iuranwarga_edit', compact('iuran', 'users'));
     }
 
     /**
@@ -102,10 +104,10 @@ class IuranController extends Controller
     private function validateRequest(Request $request)
     {
         return Validator::make($request->all(), [
-            'id_warga' => 'required|integer|exists:warga,id',
+            'id_warga' => 'required|integer|exists:users,id',
             'nama_warga' => 'required|string',
             'tanggal_iuran' => 'required|date',
             'nominal' => 'required|numeric|min:1',
-        ]);
+        ])->validate();
     }
 }

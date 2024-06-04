@@ -18,4 +18,9 @@ class Iuran extends Model
         'tanggal_iuran',
         'nominal',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'id_warga');
+    }
 }

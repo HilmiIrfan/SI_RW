@@ -20,7 +20,7 @@ class PendudukController extends Controller
 
         return view('penduduk.index', compact('penduduks', 'filter'));
     }
-    
+
     public function create()
     {
         // Mendapatkan nomor KK yang sudah ada
@@ -28,7 +28,7 @@ class PendudukController extends Controller
         
         return view('penduduk.create', compact('existing_no_kk'));
     }
-
+    
     public function store(Request $request)
     {
         // Validasi data
@@ -53,8 +53,4 @@ class PendudukController extends Controller
         $penduduks = Penduduk::where('no_kk', $no_kk)->get();
         return view('penduduk.detail', compact('penduduks'));
     }
-
-    
-    
-
 }
