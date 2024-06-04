@@ -8,73 +8,74 @@ use Illuminate\Http\Request;
 
 class GaleriController extends Controller
 {
+    // Menampilkan semua item galeri
     public function index()
     {
-        $galeri = Galeri::all();
-        return view('galeri.index', compact('galeri'));
-    }
-    public function indexAdmin()
-    {
-        $galeri = Galeri::all();
-        return view('galeriAdmin.index', compact('galeri'));
+        $galeris = Galeri::all();
+        return view('galeri/index', compact('galeris'));
     }
 
+    // Menampilkan form untuk menambahkan item galeri baru
     public function create()
     {
-        return view('galeri.create');
+        return view('galeri/create');
     }
 
-    // public function store(Request $request)
-    // {
-    //     $request->validate([
-    //         'title' => 'required',
-    //         'image' => 'required|image',
-    //     ]);
+    // Menyimpan item galeri baru ke database
+    public function store(Request $request)
+    {
+        // Validasi data input
+        $request->validate([
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Atur sesuai kebutuhan
+        ]);
 
-    //     $imagePath = $request->file('image')->store('images', 'public');
+        // Upload gambar
+        $imageName = time().'.'.$request->image->extension();  
+        $request->image->move(public_path('images'), $imageName);
 
-    //     // Galeri:create([
-    //     //     'title' => $request->title,
-    //     //     'description' => $request->description,
-    //     //     'image_path' => $imagePath,
-    //     // ]);
+        // Simpan data ke database
+        Galeri::create([
+            'image_path' => $imageName,
+        ]);
 
-    //     return redirect()->route('galeri.index')->with('success', 'Galeri created successfully.');
-    // }
+        return redirect()->route('galeri/index')->with('success', 'Item galeri berhasil ditambahkan.');
+    }
 
-    // public function show(Galeri $galeri)
-    // {
-    //     return view('galeri.show', compact('galeri'));
-    // }
+    // Menampilkan form untuk mengedit item galeri
+    public function edit($id)
+    {
+        $galeri = Galeri::findOrFail($id);
+        return view('galeri/edit', compact('galeri'));
+    }
 
-    // public function edit(Galeri $galeri)
-    // {
-    //     return view('galeri.edit', compact('galeri'));
-    // }
+    // Memperbarui item galeri di database
+    public function update(Request $request, $id)
+    {
+        // Validasi data input
+        $request->validate([
+            'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048', // Atur sesuai kebutuhan
+        ]);
 
-    // public function update(Request $request, Galeri $galeri)
-    // {
-    //     $request->validate([
-    //         'title' => 'required',
-    //         'image' => 'nullable|image',
-    //     ]);
+        // Cek apakah item galeri ada dalam database
+        $galeri = Galeri::findOrFail($id);
 
-    //     if ($request->hasFile('image')) {
-    //         $imagePath = $request->file('image')->store('images', 'public');
-    //         $galeri->image_path = $imagePath;
-    //     }
+        // Jika ada gambar baru, upload dan simpan gambar baru
+        if ($request->hasFile('image')) {
+            $imageName = time().'.'.$request->image->extension();  
+            $request->image->move(public_path('images'), $imageName);
+            $galeri->image_path = $imageName;
+        }
 
-    //     $galeri->title = $request->title;
-    //     $galeri->description = $request->description;
-    //     $galeri->save();
+        $galeri->save();
 
-    //     return redirect()->route('galeri.index')->with('success', 'Galeri updated successfully.');
-    // }
+        return redirect()->route('galeri/index')->with('success', 'Item galeri berhasil diperbarui.');
+    }
 
-    // public function destroy(Galeri $galeri)
-    // {
-    //     $galeri->delete();
-    //     return redirect()->route('galeri.index')->with('success', 'Galeri deleted successfully.');
-    // }
+    // Menghapus item galeri dari database
+    public function destroy($id)
+    {
+        $galeri = Galeri::findOrFail($id);
+        $galeri->delete();
+        return redirect()->route('galeri/index')->with('success', 'Item galeri berhasil dihapus.');
+    }
 }
-?>

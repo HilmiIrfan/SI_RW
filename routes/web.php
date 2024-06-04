@@ -63,6 +63,9 @@ Route::get('/galerishow', function () {
     return view('galeri.galeri');
 });
 Route::get('/galeri', [GaleriController::class, 'index'])->name('galeri.index');
+Route::get('/galeri/create', [GaleriController::class, 'create'])->name('galeri.create');
+Route::post('/galeri/store', [GaleriController::class, 'store'])->name('galeriadmin.store');
+
 
 Route::get('/pengurus', function () {
     return view('pengurus.pengurus');
