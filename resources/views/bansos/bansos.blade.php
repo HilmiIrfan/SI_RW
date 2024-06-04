@@ -12,9 +12,9 @@
         /* Style container */
         .container {
             width: 100%;
-            max-width: 600px;
+            max-width: 6000px;
             margin: 50px auto;
-            margin-top: 15px;
+            margin-top: 0px;
             background-color: #fff;
             padding: 40px;
             border-radius: 20px;
@@ -76,9 +76,13 @@
             background-color: #f9f9f9;
         }
     </style>
-
+    <div class="container-fluid">
+        <div class="card card-primary">
+          <div class="card-header">
+            <h4 class="card-title">Form Input Data Bansos</h4>
+          </div>
     <div class="container">
-        <h2>Form Data Input Bansos</h2>
+        <h2 style="text-align: center;">Masukkan Data Anda</h2>
         @if(session('success'))
             <div class="alert alert-success">
                 {{ session('success') }}
@@ -96,7 +100,7 @@
         <form action="{{ route('bansos.store') }}" method="post">
             @csrf
             <div class="form-group">
-                <label for="no_kk">Nomor KK:</label>
+                <label for="no_kk">Nomor Kartu Keluarga:</label>
                 <input type="text" id="no_kk" name="no_kk" value="{{ old('no_kk') }}" required>
             </div>
             <div class="form-group">
