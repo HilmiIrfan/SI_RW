@@ -1,5 +1,5 @@
 
-@extends('warga.template')
+@extends('none.template')
 
 @section('content')
 
