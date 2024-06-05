@@ -17,13 +17,13 @@ class IuranController extends Controller
     public function index()
     {
         $iuran = Iuran::with('user')->get();
-        return view('rt.iuranwarga', compact('iuran'));
+        return view('iuran.index', compact('iuran'));
     }
 
     public function indexAdmin()
     {
         $iuran = Iuran::with('user')->get();
-        return view('rt.iuranwargaAdmin', compact('iuran'));
+        return view('iuran.index', compact('iuran'));
     }
 
     /**
@@ -34,7 +34,7 @@ class IuranController extends Controller
     public function create()
     {
         $users = User::all();
-        return view('rt.iuranwarga_create', compact('users'));
+        return view('iuran.create', compact('users'));
     }
 
     /**
@@ -110,4 +110,6 @@ class IuranController extends Controller
             'nominal' => 'required|numeric|min:1',
         ])->validate();
     }
+    
+    
 }
