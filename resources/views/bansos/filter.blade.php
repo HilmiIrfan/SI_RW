@@ -23,7 +23,8 @@
                         <th>Pendidikan</th>
                         <th>Surat Tambahan</th>
                         <th>Status</th>
-                        <th>Kepala Keluarga</th> <!-- New column -->
+                        <th>Kepala Keluarga</th>
+                        <th>Kelayakan</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -37,6 +38,7 @@
                         <td>{{ $data->alamat }}</td>
                         <td>{{ $data->pendidikan }}</td>
                         <td>{{ $data->surat_tambahan }}</td>
+                        <td>{{ $data->Kelayakan }}</td>
                         <td>{{ $data->status }}</td>
                         <td>
                             @foreach($bansoss as $datas)

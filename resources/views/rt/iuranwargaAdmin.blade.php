@@ -42,7 +42,7 @@
     </table>
   </div>
 
-  <a href="{{ route('iuran.create') }}" class="btn btn-primary">Tambah Iuran Warga</a>
+  <a href="{{ route('iuranAdmin.create') }}" class="btn btn-primary">Tambah Iuran Warga</a>
 </div>
 @endsection
 

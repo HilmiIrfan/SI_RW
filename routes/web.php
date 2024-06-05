@@ -48,6 +48,7 @@ Route::get('/laporan', function () {
     return view('laporan.laporan');
 });
 Route::get('/laporanshow', [LaporanController::class, 'laporanshow']);
+Route::get('/laporan/store', [LaporanController::class, 'store'])->name('laporan.store');
 
 Route::get('/bansos', function () {
     return view('bansos.bansos');
@@ -96,6 +97,8 @@ Route::get('/laporanshow', [LaporanController::class,'index']);
 Route::get('/iuran', [IuranController::class, 'index'])->name('iuran.index');
 Route::get('/iuranAdmin', [IuranController::class, 'indexAdmin'])->name('iuran.indexAdmin');
 Route::get('/iuran/create', [IuranController::class, 'create'])->name('iuran.create');
+Route::get('/iuran/create', [IuranController::class, 'create'])->name('iuran.create');
+Route::get('/iuran/createAdmin', [IuranController::class, 'createAdmin'])->name('iuranAdmin.create');
 Route::post('/iuran', [IuranController::class, 'store'])->name('iuran.store');
 Route::get('/iuran/{id}/edit', [IuranController::class, 'edit'])->name('iuran.edit');
 Route::put('/iuran/{id}', [IuranController::class, 'update'])->name('iuran.update');

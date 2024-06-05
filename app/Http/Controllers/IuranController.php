@@ -36,7 +36,11 @@ class IuranController extends Controller
         $users = User::all();
         return view('rt.iuranwarga_create', compact('users'));
     }
-
+    public function createAdmin()
+    {
+        $users = User::all();
+        return view('rt.iuranwargaAdmin_create', compact('users'));
+    }
     /**
      * Menyimpan data iuran baru.
      *

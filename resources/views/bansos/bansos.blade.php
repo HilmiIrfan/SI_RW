@@ -110,7 +110,7 @@
                     <option value="1" {{ old('jumlah_tanggungan') == '1' ? 'selected' : '' }}>1</option>
                     <option value="2" {{ old('jumlah_tanggungan') == '2' ? 'selected' : '' }}>2</option>
                     <option value="3" {{ old('jumlah_tanggungan') == '3' ? 'selected' : '' }}>3</option>
-                    <option value=">3" {{ old('jumlah_tanggungan') == '>3' ? 'selected' : '' }}>&gt;3</option>
+                    <option value="4" {{ old('jumlah_tanggungan') == '4' ? 'selected' : '' }}>&gt;3</option>
                 </select>
             </div>
             <div class="form-group">
