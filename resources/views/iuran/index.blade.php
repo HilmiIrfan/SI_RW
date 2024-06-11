@@ -6,6 +6,39 @@
             <h3 class="card-title">Iuran Warga</h3>
         </div>
         <div class="card-body">
+
+          <!-- Filter Form -->
+          <form method="GET" action="{{ route('iuran.index') }}">
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <label for="bulan">Bulan</label>
+                    <select name="bulan" class="form-control">
+                        <option value="">Semua</option>
+                        @foreach(range(1, 12) as $month)
+                            <option value="{{ $month }}" {{ request('bulan') == $month ? 'selected' : '' }}>
+                                {{ date('F', mktime(0, 0, 0, $month, 10)) }}
+                            </option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label for="tahun">Tahun</label>
+                    <select name="tahun" class="form-control">
+                        <option value="">Semua</option>
+                        @foreach(range(date('Y') - 5, date('Y')) as $year)
+                            <option value="{{ $year }}" {{ request('tahun') == $year ? 'selected' : '' }}>
+                                {{ $year }}
+                            </option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label>&nbsp;</label>
+                    <button type="submit" class="btn btn-primary btn-block">Filter</button>
+                </div>
+            </div>
+        </form>
+        
             <table class="table table-bordered table-striped table-hover table-sm">
                 <thead>
                     <tr>

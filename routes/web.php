@@ -95,6 +95,7 @@ Route::get('/laporanshow', [LaporanController::class,'index']);
 
 
 Route::get('/iuran', [IuranController::class, 'index'])->name('iuran.index');
+Route::post('/iuran', [IuranController::class, 'store'])->name('iuran.store');
 Route::get('/iuranAdmin', [IuranController::class, 'indexAdmin'])->name('iuran.indexAdmin');
 Route::get('/iuran/create', [IuranController::class, 'create'])->name('iuran.create');
 Route::get('/iuran/create', [IuranController::class, 'create'])->name('iuran.create');

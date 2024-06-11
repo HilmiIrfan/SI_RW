@@ -14,9 +14,21 @@ class IuranController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        $iuran = Iuran::with('user')->get();
+    public function index(Request $request)
+{
+    $query = Iuran::with('user');
+
+    // Filter berdasarkan bulan
+    if ($request->filled('bulan')) {
+        $query->whereMonth('tanggal_iuran', $request->bulan);
+    }
+
+    // Filter berdasarkan tahun
+    if ($request->filled('tahun')) {
+        $query->whereYear('tanggal_iuran', $request->tahun);
+    }
+
+    $iuran = $query->get();
         return view('iuran.index', compact('iuran'));
     }
 
