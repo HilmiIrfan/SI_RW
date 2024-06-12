@@ -112,7 +112,9 @@
             </div>
             <div class="text-container">
                 <h1>SEJARAH TERBENTUKNYA RW. 01 KELURAHAN KESATRIAN-KECAMATAN BLIMBING KOTA MALANG</h1>
-                <p> Isikan Sejarahnyta yaaa....Karna Saya Tidak Tau</p>
+                <p> RW 01 Kesatrian Dalam, Malang, adalah salah satu wilayah yang memiliki sejarah panjang dalam pembentukannya. Wilayah ini dikenal dengan komunitas yang harmonis dan semangat gotong royong yang tinggi.
+                    Tahun 1970-an: Awal Pembentukan
+                    Pada tahun 1975, seiring dengan meningkatnya jumlah penduduk di Kesatrian Dalam, kebutuhan akan pembagian wilayah administratif yang lebih kecil menjadi sangat mendesak. Pada waktu itu, wilayah ini masih menjadi bagian dari kelurahan yang lebih besar tanpa adanya subdivisi yang jelas.</p>
                 <h1><br></h1>
                 <h1>RW 01 KELURAHAN KESATRIAN</h1>
                 <p>Visi: <br>Terwujudnya RW Yang Maju, Mandiri, Sejahtera, Dan Berkelanjutan, Dengan Mengedepankan Semangat Gotong Royong, Kebersamaan, Dan Kepedulian Antar Warga.</p>
